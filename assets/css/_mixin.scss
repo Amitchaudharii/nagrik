@@ -5,6 +5,13 @@
   justify-content: $justify;
 }
 
+@mixin display_flex_center($direction, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: $justify;
+}
+
 @mixin news_post_date($textColor) {
   display: flex;
   align-items: center;
