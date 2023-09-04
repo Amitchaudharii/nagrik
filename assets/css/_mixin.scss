@@ -1,0 +1,44 @@
+@mixin display_flex($direction, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: start;
+  justify-content: $justify;
+}
+
+@mixin news_post_date($textColor) {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+  color: $textColor;
+
+  span {
+    font-size: 0.8rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
+
+@mixin heading($size, $color) {
+  font-size: $size;
+  font-weight: 700;
+  color: $color;
+}
+
+@mixin paragraph_text($size, $color) {
+  font-size: $size;
+  color: $color;
+  font-weight: 600;
+}
+
+@mixin button_red {
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 25px;
+  background-color: #c03632;
+  font-weight: 600;
+}
