@@ -531,6 +531,48 @@ h6 {
 }
 
 // TEN NEWS POST
+.slider_head {
+  .slider_header {
+    margin: 10px 0;
+    h2 {
+      @include heading(2rem, #3498db);
+    }
+  }
+  .slider {
+    @include display_flex(row, space-between);
+    gap: 20px;
+
+    .slider_content {
+      width: 40%;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: end;
+      background-image: url("https://img.freepik.com/free-photo/male-business-executive-giving-speech_107420-63828.jpg?w=740&t=st=1693752274~exp=1693752874~hmac=9ac21254cc6c647a53eabfa62351301bfc34a8b0732ef0fc228275d9f09776ce");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 4px;
+
+      .slider_content_text {
+        padding: 40px;
+        border-radius: 4px;
+        background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.8)
+        );
+
+        h2 {
+          text-align: start;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
 .news_post_list_banner {
   // height: 750px;
 
