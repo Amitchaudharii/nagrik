@@ -13,10 +13,151 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="assets/js/main.js"></script>
   </head>
   <body>
     <div class="container">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header_top">
+          <div class="trending_tags">
+            <ul>
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">Entertenment</a></li>
+              <li><a href="#">Sports</a></li>
+              <li><a href="#">Films</a></li>
+              <li><a href="#">Sarkari bank</a></li>
+              <li><a href="#">Police</a></li>
+            </ul>
+          </div>
+          <div class="ads_banners">
+            <a href="#" class="banners">
+              <img
+                src="https://smartchautari.machbank.com/assets/frontend/images/machabank-logo.png"
+                alt=""
+              />
+            </a>
+            <a href="#" class="banners">
+              <img
+                src="data:image/png;base64,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"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="header_title_content">
+            <div class="header_main_title">
+              <h1>SILAPATRA</h1>
+              <span>SUB TITLE HERE</span>
+            </div>
+            <div class="update_date">
+              <span>Sat, Aug 19, 2023 </span>
+              <p>sanibar, vadra, 2080</p>
+            </div>
+          </div>
+        </div>
+        <div class="header_bottom">
+          <!-- <div class="header_hamburger">
+            <button type="button"><i class="fas fa-bars"></i></button>
+          </div> -->
+          <div class="header_links">
+            <ul>
+              <li>
+                <button class="toggleSidebar" type="button">
+                  <i class="fas fa-bars"></i>
+                </button>
+              </li>
+              <li>
+                <a href="#"><img src="assets/image/logo.svg" alt="" /></a>
+              </li>
+              <li>
+                <a href="#">समाचार</a>
+              </li>
+              <li>
+                <a href="#">राजनीति</a>
+              </li>
+              <li>
+                <a href="#">अर्थ</a>
+              </li>
+              <li>
+                <a href="#">विचार</a>
+              </li>
+              <li>
+                <a href="#">कला साहित्य</a>
+              </li>
+              <li>
+                <a href="#">आम निर्वाचन-२०७९</a>
+              </li>
+              <li>
+                <a href="#">थप </a>
+              </li>
+            </ul>
+          </div>
+          <div class="header_button_box">
+            <button type="button"><i class="fas fa-search"></i></button>
+            <a href="#"> युनिकोड </a>
+          </div>
+
+          <div class="bottom_nav_medium_view">
+            <ul>
+              <li>
+                <button class="toggleSidebar" type="button">
+                  <i class="fas fa-bars"></i>
+                </button>
+              </li>
+              <li>
+                <a href="#"><img src="assets/image/logo.svg" alt="" /></a>
+              </li>
+            </ul>
+            <div class="header_button_box">
+              <button type="button"><i class="fas fa-search"></i></button>
+              <a href="#"> युनिकोड </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+          <span class="main_title">
+            <img
+              class="logo_icon"
+              src="https://shilapatra.com/themes/shila-patra/images/logo-small.svg"
+              alt="Shilapatra Media Network"
+            />
+            <img
+              class="logo_main"
+              src="https://shilapatra.com/themes/shila-patra/images/logo.svg"
+              alt="Shilapatra Media Network"
+            />
+
+            <button id="toggleSidebarClose" class="toggle_closs">
+              <i class="fas fa-times"></i>
+            </button>
+          </span>
+
+          <ul class="menu">
+            <li><a href="#">समाचार</a></li>
+            <li>
+              <a href="#">राजनीति</a>
+              <!-- <ul class="submenu">
+                  <li>
+                    <a href="#">Product 1</a>
+                  </li>
+                  <li><a href="#">Product 2</a></li>
+                </ul> -->
+            </li>
+            <li><a href="#">कला साहित्य</a></li>
+            <li><a href="#">आम निर्वाचन-२०७९</a></li>
+            <li><a href="#">स्थानीय निर्वाचन–२०७९</a></li>
+            <li><a href="#">शिक्षा</a></li>
+            <li><a href="#">जीवनशैली</a></li>
+            <li><a href="#">युनिकोड</a></li>
+          </ul>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <!-- SIDEBAR END -->
+      </header>
+
       <!-- FIRST NEWS POST TITLE -->
 
       <div class="news_post_title">
@@ -32,7 +173,12 @@
         </div>
         <div class="news_post_title_details">
           <div class="agency_details">
-            <div class="agency_details_img"><span></span></div>
+            <div class="agency_details_img">
+              <img
+                src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
+                alt=""
+              />
+            </div>
             <div class="agency_details_name"><span>एजेन्सी</span></div>
           </div>
           <div class="news_post_title_date">
@@ -58,7 +204,12 @@
         </div>
         <div class="news_post_title_details">
           <div class="agency_details">
-            <div class="agency_details_img"><span></span></div>
+            <div class="agency_details_img">
+              <img
+                src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
+                alt=""
+              />
+            </div>
             <div class="agency_details_name"><span>रोशन राउत</span></div>
           </div>
           <div class="news_post_title_date">
@@ -73,6 +224,23 @@
           />
         </div>
       </div>
+
+      <!-- ADS -->
+      <div class="ads_banners">
+        <a href="#" class="banners">
+          <img
+            src="https://smartchautari.machbank.com/assets/frontend/images/machabank-logo.png"
+            alt=""
+          />
+        </a>
+        <a href="#" class="banners">
+          <img
+            src="data:image/png;base64,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"
+            alt=""
+          />
+        </a>
+      </div>
+      <!-- ADS END -->
 
       <!-- THIRD NEWS POST IMG TITLE -->
 
@@ -529,7 +697,7 @@
               </div>
             </div>
             <div
-              class="news_post_list_banner_content_list news_post_list_banner_content_main_post_list"
+              class="news_post_list_banner_content_list news_post_list_banner_content_main_post_list border_none"
             >
               <a
                 href="#"
@@ -575,7 +743,7 @@
               </a>
             </div>
           </div>
-          <div class="news_post_list_banner_content_list">
+          <div class="news_post_list_banner_content_list border_none">
             <a href="#" class="news_post_list_banner_content_list_text_header">
               <div class="news_post_list_banner_content_list_text_img">
                 <img
@@ -708,7 +876,7 @@
             </a>
           </div>
         </div>
-        <div class="news_post_two_rows_content">
+        <div class="news_post_two_rows_content border_none">
           <div class="news_post_two_rows_content_heading">
             <button>samajik</button>
           </div>
@@ -769,81 +937,83 @@
       </div>
 
       <!-- TEN NEWS POST -->
-      <div class="overflow">
-        <button class="button previous"><i class="fac fa-prev"></i></button>
-        <!-- <div class="strip_of paper1"></div> -->
-
-        <div class="carousel">
-          <div class="slider">
-            <div class="card">
-              <div
-                class="card-bg"
-                style="
-                  background-image: url(https://img.freepik.com/free-photo/male-business-executive-giving-speech_107420-63828.jpg?w=740&t=st=1693752274~exp=1693752874~hmac=9ac21254cc6c647a53eabfa62351301bfc34a8b0732ef0fc228275d9f09776ce);
-                "
-              >
-                <a class="location" href="#"
-                  >आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</a
+      <div class="carousel_container">
+        <h1 class="carousel_container_header">खेलकुद</h1>
+        <div class="overflow">
+          <button class="button previous"><i class="fac fa-prev"></i></button>
+          <!-- <div class="strip_of paper1"></div> -->
+          <div class="carousel">
+            <div class="slider">
+              <div class="card">
+                <div
+                  class="card-bg"
+                  style="
+                    background-image: url(https://img.freepik.com/free-photo/male-business-executive-giving-speech_107420-63828.jpg?w=740&t=st=1693752274~exp=1693752874~hmac=9ac21254cc6c647a53eabfa62351301bfc34a8b0732ef0fc228275d9f09776ce);
+                  "
                 >
+                  <a class="location" href="#"
+                    >आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</a
+                  >
+                </div>
               </div>
-            </div>
 
-            <div class="card">
-              <div
-                class="card-bg"
-                style="
-                  background-image: url(https://img.freepik.com/free-photo/male-business-executive-giving-speech_107420-63828.jpg?w=740&t=st=1693752274~exp=1693752874~hmac=9ac21254cc6c647a53eabfa62351301bfc34a8b0732ef0fc228275d9f09776ce);
-                "
-              >
-                <a class="location" href="#"
-                  >आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</a
+              <div class="card">
+                <div
+                  class="card-bg"
+                  style="
+                    background-image: url(https://img.freepik.com/free-photo/male-business-executive-giving-speech_107420-63828.jpg?w=740&t=st=1693752274~exp=1693752874~hmac=9ac21254cc6c647a53eabfa62351301bfc34a8b0732ef0fc228275d9f09776ce);
+                  "
                 >
+                  <a class="location" href="#"
+                    >आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</a
+                  >
+                </div>
               </div>
-            </div>
 
-            <div class="card">
-              <div
-                class="card-bg"
-                style="
-                  background-image: url(https://img.freepik.com/free-photo/male-business-executive-giving-speech_107420-63828.jpg?w=740&t=st=1693752274~exp=1693752874~hmac=9ac21254cc6c647a53eabfa62351301bfc34a8b0732ef0fc228275d9f09776ce);
-                "
-              >
-                <a class="location" href="#"
-                  >आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</a
+              <div class="card">
+                <div
+                  class="card-bg"
+                  style="
+                    background-image: url(https://img.freepik.com/free-photo/male-business-executive-giving-speech_107420-63828.jpg?w=740&t=st=1693752274~exp=1693752874~hmac=9ac21254cc6c647a53eabfa62351301bfc34a8b0732ef0fc228275d9f09776ce);
+                  "
                 >
+                  <a class="location" href="#"
+                    >आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</a
+                  >
+                </div>
               </div>
-            </div>
 
-            <div class="card">
-              <div
-                class="card-bg"
-                style="
-                  background-image: url(https://img.freepik.com/free-photo/male-business-executive-giving-speech_107420-63828.jpg?w=740&t=st=1693752274~exp=1693752874~hmac=9ac21254cc6c647a53eabfa62351301bfc34a8b0732ef0fc228275d9f09776ce);
-                "
-              >
-                <a class="location" href="#"
-                  >आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</a
+              <div class="card">
+                <div
+                  class="card-bg"
+                  style="
+                    background-image: url(https://img.freepik.com/free-photo/male-business-executive-giving-speech_107420-63828.jpg?w=740&t=st=1693752274~exp=1693752874~hmac=9ac21254cc6c647a53eabfa62351301bfc34a8b0732ef0fc228275d9f09776ce);
+                  "
                 >
+                  <a class="location" href="#"
+                    >आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</a
+                  >
+                </div>
               </div>
-            </div>
 
-            <div class="card">
-              <div
-                class="card-bg nono"
-                style="
-                  background-image: url(https://img.freepik.com/free-photo/male-business-executive-giving-speech_107420-63828.jpg?w=740&t=st=1693752274~exp=1693752874~hmac=9ac21254cc6c647a53eabfa62351301bfc34a8b0732ef0fc228275d9f09776ce);
-                "
-              >
-                <a class="location" href="#"
-                  >आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</a
+              <div class="card">
+                <div
+                  class="card-bg nono"
+                  style="
+                    background-image: url(https://img.freepik.com/free-photo/male-business-executive-giving-speech_107420-63828.jpg?w=740&t=st=1693752274~exp=1693752874~hmac=9ac21254cc6c647a53eabfa62351301bfc34a8b0732ef0fc228275d9f09776ce);
+                  "
                 >
+                  <a class="location" href="#"
+                    >आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</a
+                  >
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- <div class="strip_of paper2"></div> -->
-        <button class="button next"><i class="fac fa-next"></i></button>
+          <!-- <div class="strip_of paper2"></div> -->
+          <button class="button next"><i class="fac fa-next"></i></button>
+        </div>
       </div>
 
       <!-- ELEVEN NEWS POST -->
@@ -928,90 +1098,107 @@
       </div>
 
       <!-- TWELVE NEWS POST -->
-      <div class="news_post_two_column">
-        <div class="news_post_two_column_content">
-          <a href="#" class="news_post_two_column_content_banner">
-            <div class="news_post_two_column_content_banner_content">
-              <h2>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</h2>
+      <div class="news_post_two_column_main">
+        <div class="news_post_two_column_main_head">
+          <h1>स्वास्थ्य</h1>
+          <div class="news_post_two_column_main_head_tab">
+            <div class="news_post_two_column_main_head_tab_btns">
+              <button type="button">कृषि</button>
+              <button type="button">कृषि</button>
+              <button type="button">कृषि</button>
+              <button type="button">कृषि</button>
+              <button type="button">कृषि</button>
             </div>
-          </a>
-          <div class="news_post_two_column_content_slider">
-            <div class="news_post_two_column_content_slider_content">
-              <h2>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</h2>
-              <p>
-                अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन अभ्यास
-                गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन अभ्यास
-                गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन अभ्यास
-                गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
-              </p>
-            </div>
-          </div>
-          <div class="news_post_two_column_content_banner_list">
-            <a
-              href="#"
-              class="news_post_two_column_content_banner_list_content"
-            >
-              <img
-                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                alt=""
-              />
-              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-            </a>
-            <a
-              href="#"
-              class="news_post_two_column_content_banner_list_content"
-            >
-              <img
-                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                alt=""
-              />
-              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-            </a>
+            <a href="#"
+              >थप समाचार <i class="fas fa-long-arrow-alt-right"></i
+            ></a>
           </div>
         </div>
-        <div class="news_post_two_column_list">
-          <a href="#" class="news_post_two_column_list_content">
-            <img
-              src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-              alt=""
-            />
-            <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-          </a>
-          <a href="#" class="news_post_two_column_list_content">
-            <img
-              src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-              alt=""
-            />
-            <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-          </a>
-          <a href="#" class="news_post_two_column_list_content">
-            <img
-              src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-              alt=""
-            />
-            <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-          </a>
-          <a href="#" class="news_post_two_column_list_content">
-            <img
-              src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-              alt=""
-            />
-            <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-          </a>
-          <a href="#" class="news_post_two_column_list_content">
-            <img
-              src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-              alt=""
-            />
-            <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-          </a>
-          <a href="#" class="news_post_two_column_list_content">
-            <img
-              src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-              alt=""
-            />
-            <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-          </a>
+        <div class="news_post_two_column">
+          <div class="news_post_two_column_content">
+            <a href="#" class="news_post_two_column_content_banner">
+              <div class="news_post_two_column_content_banner_content">
+                <h2>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</h2>
+              </div>
+            </a>
+            <div class="news_post_two_column_content_slider">
+              <div class="news_post_two_column_content_slider_content">
+                <h2>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</h2>
+                <p>
+                  अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन अभ्यास
+                  गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन अभ्यास
+                  गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन अभ्यास
+                  गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                </p>
+              </div>
+            </div>
+            <div class="news_post_two_column_content_banner_list">
+              <a
+                href="#"
+                class="news_post_two_column_content_banner_list_content"
+              >
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+                <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+              </a>
+              <a
+                href="#"
+                class="news_post_two_column_content_banner_list_content"
+              >
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+                <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+              </a>
+            </div>
+          </div>
+          <div class="news_post_two_column_list">
+            <a href="#" class="news_post_two_column_list_content">
+              <img
+                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                alt=""
+              />
+              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+            </a>
+            <a href="#" class="news_post_two_column_list_content">
+              <img
+                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                alt=""
+              />
+              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+            </a>
+            <a href="#" class="news_post_two_column_list_content">
+              <img
+                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                alt=""
+              />
+              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+            </a>
+            <a href="#" class="news_post_two_column_list_content">
+              <img
+                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                alt=""
+              />
+              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+            </a>
+            <a href="#" class="news_post_two_column_list_content">
+              <img
+                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                alt=""
+              />
+              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+            </a>
+            <a href="#" class="news_post_two_column_list_content">
+              <img
+                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                alt=""
+              />
+              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -1210,7 +1397,7 @@
               </a>
             </div>
           </div>
-          <div class="news_post_four_rows_content">
+          <div class="news_post_four_rows_content border_none">
             <div class="news_post_two_rows_content_heading">
               <button>Ramailo</button>
             </div>
@@ -1304,7 +1491,10 @@
             <a href="#">
               जुलाई, एक लाख २० हजार वर्षयताकै गर्मी महीना हुन सक्ने
             </a>
-            <a href="#" class="news_post_list_banner_content_list_text">
+            <a
+              href="#"
+              class="news_post_list_banner_content_list_text border_none"
+            >
               <div class="news_post_list_banner_content_list_text_img">
                 <img
                   src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
@@ -1317,6 +1507,7 @@
             </a>
           </div>
           <div class="news_post_list_banner_content_list_news_layout">
+            <h1>शिलापत्र टीभी</h1>
             <div class="news_post_list_banner_content_list_news">
               <a href="#" class="news_post_list_banner_list_news_content">
                 <div class="news_post_list_banner_content_list_news_img">
@@ -1384,8 +1575,11 @@
 
       <div class="news_post_details">
         <div class="news_post_details_content">
-          <a href="#" class="news_post_details_content_banner">
+          <div class="news_post_details_content_banner">
             <div class="news_post_details_content_banner_text">
+              <div class="news_post_two_rows_content_heading">
+                <button>वातावरण</button>
+              </div>
               <h3>सुन खोजे सोनाहासँगै कर्णाली किनारमा एक दिन (तस्वीर कथा)</h3>
               <span>तस्वीर • गोपेन राई</span>
               <p>
@@ -1399,7 +1593,7 @@
                 alt=""
               />
             </div>
-          </a>
+          </div>
           <div class="news_post_details_content_list">
             <a href="#" class="news_post_details_content_list_banner">
               <div class="news_post_details_content_list_banner_img">
@@ -1481,6 +1675,164 @@
           </a>
         </div>
       </div>
+
+      <!-- SIXTEEN -->
+      <div class="news_post_gallery">
+        <div class="news_post_gallery_content">
+          <div class="news_post_gallery_content_row">
+            <a href="#" class="news_post_gallery_content_row_img">
+              <img
+                src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                alt=""
+              />
+              <div class="news_post_gallery_img_title">
+                <h2>Lorem ipsum dolor sit,</h2>
+              </div>
+            </a>
+            <div class="news_post_gallery_content_column">
+              <div class="news_post_gallery_content_column_row">
+                <a href="#" class="news_post_gallery_content_column_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                    alt=""
+                  />
+                  <div class="news_post_gallery_img_title">
+                    <h2>Lorem ipsum dolor sit, amet</h2>
+                  </div>
+                </a>
+                <a href="#" class="news_post_gallery_content_column_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                    alt=""
+                  />
+                  <div class="news_post_gallery_img_title">
+                    <h2>Lorem ipsum dolor sit,</h2>
+                  </div>
+                </a>
+              </div>
+              <div class="news_post_gallery_content_column_row">
+                <a href="#" class="news_post_gallery_content_column_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                    alt=""
+                  />
+                  <div class="news_post_gallery_img_title">
+                    <h2>Lorem ipsum dolor sit, amet</h2>
+                  </div>
+                </a>
+                <a href="#" class="news_post_gallery_content_column_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                    alt=""
+                  />
+                  <div class="news_post_gallery_img_title">
+                    <h2>Lorem ipsum dolor sit, amet consectetur</h2>
+                  </div>
+                </a>
+                <a href="#" class="news_post_gallery_content_column_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                    alt=""
+                  />
+                  <div class="news_post_gallery_img_title">
+                    <h2>Lorem ipsum dolor sit,</h2>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="news_post_gallery_post">
+          <div class="news_post_gallery_post_img">
+            <img src="/assets//image//socialreview.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer_content">
+          <div class="footer_info">
+            <h1>NAGRIK MIRROR</h1>
+
+            <ul class="company_info">
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+              <li>Lorem ipsum dolor sit amet elit.</li>
+              <li>Lorem ipsum dolor sit amet consectetur elit.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+              <li>Lorem ipsum dolor sit adipisicing elit.</li>
+            </ul>
+
+            <div class="social_link">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-pinterest-p"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer_links">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Advertisement</a></li>
+              <li><a href="#">Terms And Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer_teams">
+            <h2>Our Team</h2>
+            <div class="footer_teams_info">
+              <div class="footer_teams_details">
+                <p>CEO</p>
+                <h3>Jhon wick</h3>
+              </div>
+              <div class="footer_teams_details">
+                <p>Chef</p>
+                <h3>Jhon wick</h3>
+              </div>
+              <div class="footer_teams_details">
+                <p>Share Holder</p>
+                <h3>Jhon wick</h3>
+              </div>
+              <div class="footer_teams_details">
+                <p>Share Holder</p>
+                <h3>Jhon wick</h3>
+              </div>
+              <div class="footer_teams_details">
+                <p>Managar</p>
+                <h3>Jhon wick</h3>
+              </div>
+              <div class="footer_teams_details">
+                <p>CTO</p>
+                <h3>Jhon wick</h3>
+              </div>
+            </div>
+            <div class="view_all">
+              <button type="button">VIEW ALL</button>
+            </div>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <div class="copy_right_text">
+            <p>Copyright©, 2023 NAGRIKMIRROR pvt ltd, All rights reserved.</p>
+          </div>
+          <div class="back_to_top">
+            <button type="button">
+              BACK TO TOP <span class="fas fa-arrow-up"></span>
+            </button>
+          </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

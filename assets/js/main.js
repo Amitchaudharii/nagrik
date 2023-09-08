@@ -84,3 +84,55 @@ var faNext = {
 };
 
 FontAwesome.library.add(faPrev, faNext);
+
+// TOGGLE SIDEBAR
+$(document).ready(function () {
+  const sidebar = $(".sidebar");
+  const toggleButton = $(".toggleSidebar");
+  const closeSidebarButton = $("#toggleSidebarClose");
+  const submenuItems = $(".menu > li");
+  const hamburgerButton = toggleButton.find(".hamburger");
+  const overlay = $("#overlay");
+
+  sidebar.hide();
+  overlay.hide();
+
+  function openSidebar() {
+    sidebar.show("slide", { direction: "left" }, 300);
+    overlay.show();
+    hamburgerButton.addClass("active");
+  }
+
+  function closeSidebar() {
+    sidebar.hide("slide", { direction: "left" }, 300);
+    overlay.hide();
+    hamburgerButton.removeClass("active");
+  }
+
+  toggleButton.on("click", function () {
+    openSidebar();
+  });
+
+  overlay.on("click", function () {
+    closeSidebar();
+  });
+
+  closeSidebarButton.on("click", function () {
+    closeSidebar();
+  });
+
+  submenuItems.on("click", function () {
+    const submenu = $(this).find(".submenu");
+    submenu.slideToggle(200);
+  });
+
+  $(".menu a").on("click", function (e) {
+    e.preventDefault();
+    const content = $(this).text();
+    $("#mainContent").html(`<p>${content} Page Content</p>`);
+  });
+});
+
+$(function () {
+  $(".menu").menu();
+});
