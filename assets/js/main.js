@@ -134,5 +134,36 @@ $(document).ready(function () {
 });
 
 $(function () {
-  $(".menu").menu();
+  $("#menu").menu();
+});
+
+$(function () {
+  $("#sidemenu").menu();
+});
+
+$(function () {
+  $("#tabs").tabs();
+});
+
+$(document).ready(function () {
+  $(".news_post_two_column_content_slider_content").slick({
+    autoplay: true, // Auto-play slides
+    arrows: false, // Display navigation arrows
+    dots: false, // Display navigation dots
+  });
+
+  // Handle "Next" button click
+  $(".next-button").click(function () {
+    $(".news_post_two_column_content_slider_content").slick("slickNext"); // Go to the next slide
+  });
+
+  // Handle "Previous" button click
+  $(".prev-button").click(function () {
+    $(".news_post_two_column_content_slider_content").slick("slickPrev"); // Go to the previous slide
+  });
+});
+
+$("#dropdown_link").click(function () {
+  $("#sidemenu_dropdown").toggleClass("dropdown");
+  $("i").toggleClass("active");
 });

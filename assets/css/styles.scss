@@ -1,4 +1,4 @@
-// Import your variables and mixins here
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 @import "./var";
 @import "./mixin";
 
@@ -17,7 +17,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Roboto";
   font-size: 16px;
   line-height: 1.5;
 }
@@ -65,7 +65,7 @@ h6 {
 
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -75,7 +75,7 @@ h6 {
   color: white;
   font-size: 1.1rem;
   padding: 8px 15px;
-  background-color: #c03632;
+  background-color: $primary-color;
   border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
@@ -87,8 +87,8 @@ h6 {
   color: white;
   font-size: 1.1rem;
   padding: 8px 15px;
-  background-color: #d65745;
-  // border-radius: 5px;
+  background-color: $primary-color;
+  border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -102,16 +102,16 @@ h6 {
 }
 
 .third_heading {
-  font-size: 3.875rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  text-align: center;
+  text-align: start;
   color: #fff;
 }
 
 .paragraph {
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: #fff;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .ads_banners {
@@ -130,8 +130,20 @@ h6 {
   }
 }
 
+// MENU
+.ui-widget.ui-widget-content {
+  border: none !important;
+}
+
+.ui-widget-content {
+  border: none !important;
+  // background-color: #4b4b4d !important;
+  //  color: #333333;
+}
+
 // HEADER START
 .header {
+  margin: 0 0 40px 0;
   .header_top {
     .trending_tags {
       border-bottom: solid #656e71 1px;
@@ -142,8 +154,11 @@ h6 {
         li {
           list-style: none;
           a {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #656e71;
+            &:hover {
+              color: $primary-color;
+            }
           }
         }
       }
@@ -208,6 +223,8 @@ h6 {
   background-color: #4b4b4d;
   padding: 0 20px;
   .header_hamburger {
+    display: flex;
+    gap: 20px;
     button {
       outline: none;
       border: none;
@@ -216,23 +233,44 @@ h6 {
       font-size: 1.5rem;
       cursor: pointer;
     }
+    a {
+      img {
+        width: 50px;
+        display: block;
+      }
+    }
   }
   .header_links {
     display: block;
-    ul {
+    #menu {
       display: flex;
       align-items: center;
       justify-content: start;
-      gap: 50px;
+      gap: 20px;
+      background-color: #4b4b4d !important;
+
       li {
         list-style: none;
+        position: relative;
         a {
+          display: flex;
+          gap: 5px;
           color: white;
           font-size: 1rem;
           font-weight: 600;
+          border: none !important;
+          background: none !important;
+          margin: 0;
+          &:hover {
+            color: $primary-color;
+          }
           img {
             width: 50px;
             margin-bottom: -6px;
+          }
+          span {
+            color: white !important;
+            display: none;
           }
         }
         button {
@@ -242,6 +280,17 @@ h6 {
           color: white;
           font-size: 1.5rem;
           cursor: pointer;
+        }
+        .menu_dropbox {
+          position: absolute;
+          padding: 10px;
+          background-color: #4b4b4d !important;
+          width: 150px;
+          top: 43px !important;
+          left: -20px !important;
+          li {
+            margin: 2px 0;
+          }
         }
       }
     }
@@ -272,6 +321,7 @@ h6 {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: 5px;
     ul {
       display: flex;
       align-items: center;
@@ -324,7 +374,7 @@ h6 {
 
 .sidebar {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -355,13 +405,22 @@ h6 {
       font-size: 1rem;
     }
   }
-  .menu {
+  #sidemenu {
     list-style-type: none;
     padding: 0;
     margin: 0;
     li {
       margin-bottom: 5px;
       width: 100%;
+      position: relative;
+      .sidemenu_dropdown {
+        position: absolute;
+        left: 0 !important;
+        top: 40px !important;
+        right: 0;
+        background-color: #f2f2f2;
+        padding: 10px;
+      }
 
       a {
         display: block;
@@ -370,9 +429,11 @@ h6 {
         color: #525252;
         text-decoration: none;
         padding: 5px;
+        background: none !important;
+        border: none !important;
+        margin: 0 !important;
         &:hover {
-          background-color: $primary-color;
-          color: white;
+          color: $primary-color;
         }
       }
       .submenu {
@@ -445,17 +506,78 @@ h6 {
 // HEADER END
 
 // NEWS POST TITLE
+.highlight_news_section {
+  margin: 30px 0;
+}
+
+.highlight_news_section_second {
+  margin: 50px 0;
+}
+.news_section_three {
+  margin: 50px 0;
+}
+
+.news_section_four {
+  margin: 50px 0;
+  background-color: #222222;
+}
+.news_section_five {
+  margin: 50px 0;
+  // .news_post_three_rows {
+  //   display: block;
+  // }
+}
+
+.news_section_six {
+  margin: 50px 0;
+}
+.news_section_seven {
+  margin: 50px 0;
+}
+.news_section_eight {
+  margin: 50px 0;
+}
+.news_section_nine {
+  margin: 50px 0;
+}
+.news_section_ten {
+  margin: 50px 0;
+}
+
+.news_section_eleven {
+  margin: 50px 0;
+}
+.news_section_twelve {
+  margin: 50px 0;
+}
+
+.news_section_thirteen {
+  margin: 50px 0;
+}
+
+.news_section_fourteen {
+  margin: 50px 0;
+}
+
+.news_section_fifteen {
+  margin: 50px 0;
+}
+
+.news_section_sixteen {
+  margin: 50px 0;
+}
+
 .news_post_title {
   text-align: center;
-  margin: 10px 0;
 
   .news_post_title_button {
     margin: 0 0 20px 0;
   }
 
   .news_post_title_content {
+    margin: 0 0 20px 0;
     h1 {
-      font-size: 3.875rem;
+      font-size: 3rem;
       font-weight: 700;
       text-align: center;
 
@@ -503,6 +625,10 @@ h6 {
         span {
           font-size: 1rem;
           font-weight: 600;
+          color: #525252;
+          &:hover {
+            color: $primary-color;
+          }
         }
       }
       .secondary_agency_details_name {
@@ -515,6 +641,10 @@ h6 {
       align-items: center;
       justify-content: center;
       gap: 5px;
+      color: #000;
+      &:hover {
+        color: $primary-color;
+      }
 
       span {
         font-size: 0.8rem;
@@ -535,9 +665,9 @@ h6 {
 }
 
 // FOURTH NEWS POST IMG TITLE
-.news_post_with_jpg_bg {
-  background-color: #222222;
-}
+// .news_post_with_jpg_bg {
+//   // background-color: #222222;
+// }
 
 .news_post_with_jpg {
   @include display_flex_center(row, none); // display: flex;
@@ -552,22 +682,21 @@ h6 {
     width: 52%;
     img {
       width: 100%;
+      display: block;
     }
   }
 }
 
 //  FIVTH NEWS POST
 .news_post_three_rows {
-  display: flex;
-  align-items: center;
   gap: 30px;
   padding: 20px 15px;
-  height: 800px;
+  // height: 800px;
   overflow: hidden;
 
   .news_post_three_rows_img {
     width: 40%;
-    height: 100%;
+    // height: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -579,7 +708,7 @@ h6 {
     border-radius: 4px;
 
     .news_post_three_rows_img_content_bg {
-      padding: 0 0 40px 0;
+      padding: 40px;
       border-radius: 4px;
       background-image: linear-gradient(
         to bottom,
@@ -587,24 +716,19 @@ h6 {
         rgba(0, 0, 0, 0.8)
       );
 
-      .news_post_three_rows_img_content {
-        width: 80%;
-        margin: 0 auto;
+      h2 {
+        text-align: start;
+      }
 
-        h2 {
-          text-align: start;
-        }
-
-        .news_post_date {
-          @include news_post_date(white);
-        }
+      .news_post_date {
+        @include news_post_date(white);
       }
     }
   }
 
   .news_post_three_rows_news {
     width: 35%;
-    height: 100%;
+
     @include display_flex(column, space-between);
 
     .news_post_three_rows_news_content {
@@ -622,7 +746,10 @@ h6 {
         @include display_flex(column, space-between);
 
         .news_post_three_rows_news_content_text_p {
-          @include paragraph_text(1.4rem, #000);
+          @include paragraph_text(1rem, #000);
+          &:hover {
+            color: $primary-color;
+          }
         }
         .news_post_date {
           @include news_post_date(#999999);
@@ -633,7 +760,7 @@ h6 {
 
   .news_post_three_rows_banners {
     width: 25%;
-    height: 100%;
+    gap: 20px;
     @include display_flex(column, space-between);
 
     .news_post_three_rows_banners_img {
@@ -647,19 +774,20 @@ h6 {
   }
   .news_post_three_rows_news_list {
     width: 25%;
-    height: 100%;
+
     @include display_flex(column, space-between);
 
     .news_post_three_rows_news_list_heading {
       width: 100%;
       padding: 0 0 10px 0;
+      margin: 0 0 10px 0;
       border-bottom: solid #999999 1px;
 
       .news_post_three_rows_news_list_heading_title {
         @include paragraph_text(1.4rem, #000);
 
         &:hover {
-          color: #3c3c3c;
+          color: $primary-color;
         }
       }
     }
@@ -679,7 +807,10 @@ h6 {
         }
 
         .news_post_three_rows_news_list_content_text_p {
-          @include paragraph_text(1.1rem, #000);
+          @include paragraph_text(1rem, #000);
+          &:hover {
+            color: $primary-color;
+          }
         }
       }
 
@@ -697,34 +828,44 @@ h6 {
 
 // SEVEN NEWS POST
 .news_post_three_rows {
-  @include display_flex(row, space-between);
+  // @include display_flex(row, space-between);
+  display: flex;
+
+  // flex-direction: column;
 
   .news_post_three_rows_main_content_post {
     width: 40%;
-    height: 100%;
+    // height: 100%;
 
     .news_post_three_rows_content_img {
       border-radius: 4px;
 
       img {
         width: 100%;
-        height: 650px;
+        height: 80%;
+        display: block;
         border-radius: 4px;
       }
     }
 
     .news_post_three_rows_content_text {
+      margin-top: 10px;
       .news_post_three_rows_content_text_heading {
-        @include heading(2.5rem, #333333);
+        a {
+          @include heading(1.5rem, #333333);
+          &:hover {
+            color: $primary-color;
+          }
+        }
       }
       .news_post_three_rows_content_text_p {
-        @include paragraph_text(1.1rem, #999999);
+        @include paragraph_text(1rem, #999999);
       }
     }
   }
   .news_post_three_rows_more_content_post {
     width: 35%;
-    height: 100%;
+    gap: 20px;
     @include display_flex(column, space-between);
 
     .news_post_three_rows_more_content_post_list {
@@ -735,21 +876,24 @@ h6 {
 
         img {
           width: 100%;
-          height: 300px;
+
           border-radius: 4px;
         }
       }
 
       .news_post_three_rows_more_content_post_list_text {
         .news_post_three_rows_more_content_post_list_text_heading {
-          @include paragraph_text(1.4rem, #333333);
+          @include paragraph_text(1.2rem, #333333);
+          &:hover {
+            color: $primary-color;
+          }
         }
       }
     }
   }
   .news_post_three_rows_content_post_list {
     width: 25%;
-    height: 100%;
+
     @include display_flex(column, space-between);
 
     .news_post_three_rows_content_post_list_items {
@@ -757,10 +901,10 @@ h6 {
       border-bottom: solid #525252 1px;
       padding: 0 0 10px 0;
       .news_post_three_rows_content_post_list_text {
-        @include paragraph_text(1.2rem, #525252);
+        @include paragraph_text(1.1rem, #525252);
 
         &:hover {
-          color: #3c3c3c;
+          color: $primary-color;
         }
       }
     }
@@ -806,9 +950,12 @@ h6 {
         }
       }
       .news_post_two_rows_main_content_text {
-        p {
+        a {
           margin: 10px 0;
           @include paragraph_text(1.4rem, #000);
+          &:hover {
+            color: $primary-color;
+          }
         }
       }
     }
@@ -837,15 +984,18 @@ h6 {
             bottom: 6px;
             border: none;
             color: white;
-            font-size: 1.1rem;
-            padding: 8px 20px;
+            font-size: 0.8rem;
+            padding: 5px 10px;
             background-color: #c03632;
             font-weight: 600;
           }
         }
         .news_post_two_rows_main_post_list_content_text {
-          p {
+          a {
             @include paragraph_text(1rem, #000);
+            &:hover {
+              color: $primary-color;
+            }
           }
         }
       }
@@ -1009,7 +1159,7 @@ h6 {
     width: 100%;
     height: 50%;
     padding: 1rem;
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 600;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
     position: absolute;
@@ -1151,11 +1301,15 @@ h6 {
       border-right: solid #999 1px;
 
       a {
-        @include heading(1.4rem, #3c3c3c);
+        @include heading(1.2rem, #3c3c3c);
+        &:hover {
+          color: $primary-color;
+        }
       }
 
       .news_post_list_banner_content_list_text_header {
         @include display_flex(column, space-between);
+        gap: 10px;
         .news_post_list_banner_content_list_text_img {
           border-radius: 4px;
           img {
@@ -1166,6 +1320,9 @@ h6 {
         .news_post_list_banner_content_list_text_text {
           p {
             @include paragraph_text(1rem, #000);
+            &:hover {
+              color: $primary-color;
+            }
           }
         }
       }
@@ -1186,6 +1343,9 @@ h6 {
         .news_post_list_banner_content_list_text_text {
           p {
             @include paragraph_text(1rem, #000);
+            &:hover {
+              color: $primary-color;
+            }
           }
         }
       }
@@ -1193,6 +1353,9 @@ h6 {
     .news_post_list_banner_content_main {
       width: 70%;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
 
       .news_post_list_banner_content_main_img {
         height: 100%;
@@ -1227,17 +1390,22 @@ h6 {
         }
         .news_post_three_rows_content_text {
           .news_post_three_rows_content_text_heading {
-            @include heading(2.5rem, #333333);
+            @include heading(2rem, #333333);
+            &:hover {
+              color: $primary-color;
+            }
           }
           .news_post_three_rows_content_text_p {
-            @include paragraph_text(1.1rem, #999999);
+            @include paragraph_text(1rem, #999999);
           }
         }
       }
       .news_post_list_banner_content_main_text {
-        p {
-          margin: 10px 0;
-          @include paragraph_text(1.4rem, #000);
+        a {
+          @include paragraph_text(1.2rem, #000);
+          &:hover {
+            color: $primary-color;
+          }
         }
       }
       .news_post_list_banner_content_main_post_list {
@@ -1249,10 +1417,17 @@ h6 {
 }
 
 // TWELVE NEWS POST
+
+.ui-widget-header {
+  border: none !important;
+  background: transparent !important;
+  color: #333333;
+  font-weight: bold;
+}
 .news_post_two_column_main {
-  background-color: #446148;
-  padding: 20px;
-  margin: 20px 0;
+  background-color: #446148 !important;
+  padding: 20px !important;
+  margin: 20px 0 !important;
   .news_post_two_column_main_head {
     h1 {
       font-size: 2rem;
@@ -1267,25 +1442,33 @@ h6 {
       justify-content: space-between;
       margin-bottom: 20px;
       .news_post_two_column_main_head_tab_btns {
+        background-color: none !important;
         display: flex;
         align-items: center;
         gap: 20px;
-        button {
-          outline: none;
-          border: none;
-          background-color: white;
-          color: #525252;
-          padding: 8px 20px;
-          font-size: 1rem;
-          font-weight: 600;
-          border-radius: 5px;
-          cursor: pointer;
+        li {
+          list-style: none;
+          display: contents;
+          a {
+            outline: none;
+            border: none;
+            background-color: white;
+            color: #525252;
+            padding: 8px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+          }
         }
       }
       a {
         font-size: 1rem;
         font-weight: 600;
         color: white;
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
   }
@@ -1337,6 +1520,7 @@ h6 {
     }
 
     .news_post_two_column_content_slider {
+      position: relative;
       width: 30%;
       height: 100%;
       background-color: #324935;
@@ -1344,27 +1528,57 @@ h6 {
       @include display_flex_center(column, center);
 
       .news_post_two_column_content_slider_content {
-        @include display_flex(column, none);
-        h2 {
-          @include heading(2rem, white);
+        width: 100%;
+        .news_post_two_column_content_slider_content_silder {
+          @include display_flex(column, none);
+          h2 {
+            a {
+              @include heading(1.7rem, white);
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
+          p {
+            @include paragraph_text(1rem, #999);
+          }
         }
-        p {
-          @include paragraph_text(1.2rem, #999);
+      }
+      .news_post_two_column_content_slider_control_btn {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        display: flex;
+        gap: 20px;
+        button {
+          border: solid #999 1px;
+          border-radius: 100%;
+          padding: 10px;
+          color: white;
+          background-color: transparent;
+          cursor: pointer;
+        }
+        i {
         }
       }
     }
     .news_post_two_column_content_banner_list {
       width: 30%;
       @include display_flex(column, space-between);
-      gap: 10px;
+      gap: 20px;
 
       .news_post_two_column_content_banner_list_content {
-        img {
-          width: 100%;
-          border-radius: 4px;
+        a {
+          img {
+            width: 100%;
+            border-radius: 4px;
+          }
         }
-        p {
-          @include paragraph_text(1.4rem, white);
+        a {
+          @include paragraph_text(1.1rem, white);
+          &:hover {
+            color: $primary-color;
+          }
         }
       }
     }
@@ -1379,12 +1593,17 @@ h6 {
       @include display_flex(row, space-between);
       gap: 20px;
       // width: 30%;
-      img {
-        width: 150px;
-        border-radius: 4px;
+      a {
+        img {
+          width: 150px;
+          border-radius: 4px;
+        }
       }
-      p {
-        @include paragraph_text(1.4rem, white);
+      a {
+        @include paragraph_text(1rem, white);
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
   }
@@ -1414,6 +1633,7 @@ h6 {
 
         .news_post_list_banner_content_list_text_header {
           @include display_flex(column, space-between);
+          gap: 10px;
           .news_post_list_banner_content_list_text_img {
             border-radius: 4px;
             img {
@@ -1424,6 +1644,9 @@ h6 {
           .news_post_list_banner_content_list_text_text {
             p {
               @include paragraph_text(1rem, #000);
+              &:hover {
+                color: $primary-color;
+              }
             }
           }
         }
@@ -1443,6 +1666,9 @@ h6 {
           .news_post_list_banner_content_list_text_text {
             p {
               @include paragraph_text(1rem, #000);
+              &:hover {
+                color: $primary-color;
+              }
             }
           }
         }
@@ -1477,8 +1703,13 @@ h6 {
       }
       .news_post_list_banner_content_list_news_text {
         h3 {
-          @include paragraph_text(1.4rem, #3c3c3c);
-          margin: 0 0 10px 0;
+          a {
+            @include paragraph_text(1.2rem, #3c3c3c);
+            margin: 0 0 10px 0;
+            &:hover {
+              color: $primary-color;
+            }
+          }
         }
 
         p {
@@ -1504,7 +1735,12 @@ h6 {
         width: 30%;
 
         h3 {
-          @include heading(1.8rem, #3c3c3c);
+          a {
+            @include heading(1.8rem, #3c3c3c);
+            &:hover {
+              color: $primary-color;
+            }
+          }
         }
         span {
           @include paragraph_text(0.8rem, #999999);
@@ -1531,10 +1767,15 @@ h6 {
         }
         .news_post_details_content_list_banner_text {
           h3 {
-            @include paragraph_text(1.3rem, #3c3c3c);
+            a {
+              @include paragraph_text(1.3rem, #3c3c3c);
+              &:hover {
+                color: $primary-color;
+              }
+            }
           }
           p {
-            @include paragraph_text(1rem, #525252);
+            @include paragraph_text(0.9rem, #525252);
           }
         }
       }
@@ -1553,19 +1794,26 @@ h6 {
     gap: 20px;
     .news_post_details_list_profile_details {
       text-align: center;
-      img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: solid #c55446 2px;
+      a {
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          border: solid #c55446 2px;
+        }
       }
       .news_post_details_list_profile_details_text {
         span {
           @include paragraph_text(1rem, #999999);
         }
-        p {
-          margin: 10px 0;
-          @include paragraph_text(1.4rem, #3c3c3c);
+        h3 {
+          a {
+            margin: 10px 0;
+            @include paragraph_text(1.4rem, #3c3c3c);
+            &:hover {
+              color: $primary-color;
+            }
+          }
         }
       }
     }
@@ -1575,14 +1823,13 @@ h6 {
 // SIXTEEN
 .news_post_gallery {
   @include display_flex(row, start);
-  height: 500px;
+
   .news_post_gallery_content {
     width: 70%;
-    height: 100%;
+
     .news_post_gallery_content_row {
       @include display_flex(row, start);
       gap: 5px;
-      height: 100%;
 
       .news_post_gallery_content_row_img {
         position: relative;
@@ -2009,6 +2256,9 @@ h6 {
   }
 
   .header_bottom {
+    .header_hamburger {
+      display: none;
+    }
     .header_links {
       display: none;
     }
@@ -2017,6 +2267,7 @@ h6 {
     }
     .bottom_nav_medium_view {
       display: flex;
+      width: 100%;
 
       .header_button_box {
         display: flex;

@@ -10,16 +10,34 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+    <link rel="stylesheet" href="/resources/demos/style.css" />
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <!-- Include Slick Carousel script -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
     <script src="assets/js/main.js"></script>
   </head>
   <body>
-    <div class="container">
-      <!-- HEADER -->
-      <header class="header">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container">
         <div class="header_top">
           <div class="trending_tags">
             <ul>
@@ -57,45 +75,51 @@
           </div>
         </div>
         <div class="header_bottom">
-          <!-- <div class="header_hamburger">
-            <button type="button"><i class="fas fa-bars"></i></button>
-          </div> -->
+          <div class="header_hamburger">
+            <button class="toggleSidebar" type="button">
+              <i class="fas fa-bars"></i>
+            </button>
+
+            <a href="#"><img src="assets/image/logo.svg" alt="" /></a>
+          </div>
           <div class="header_links">
-            <ul>
+            <ul id="menu">
               <li>
-                <button class="toggleSidebar" type="button">
-                  <i class="fas fa-bars"></i>
-                </button>
+                <a href="#">Home</a>
               </li>
               <li>
-                <a href="#"><img src="assets/image/logo.svg" alt="" /></a>
+                <a href="#">Politics</a>
+              </li>
+
+              <li>
+                <a href="#">Lifestyle</a>
               </li>
               <li>
-                <a href="#">समाचार</a>
+                <a href="#">Interview</a>
               </li>
               <li>
-                <a href="#">राजनीति</a>
+                <a href="#">Business</a>
               </li>
               <li>
-                <a href="#">अर्थ</a>
-              </li>
-              <li>
-                <a href="#">विचार</a>
-              </li>
-              <li>
-                <a href="#">कला साहित्य</a>
-              </li>
-              <li>
-                <a href="#">आम निर्वाचन-२०७९</a>
-              </li>
-              <li>
-                <a href="#">थप </a>
+                <a href="#">More <i class="fas fa-caret-down"></i></a>
+
+                <ul class="menu_dropbox">
+                  <li>
+                    <a href="#">Travel</a>
+                  </li>
+                  <li>
+                    <a href="#">World</a>
+                  </li>
+                  <li>
+                    <a href="#">Entertainment</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
           <div class="header_button_box">
             <button type="button"><i class="fas fa-search"></i></button>
-            <a href="#"> युनिकोड </a>
+            <a href="#"> Button </a>
           </div>
 
           <div class="bottom_nav_medium_view">
@@ -105,13 +129,10 @@
                   <i class="fas fa-bars"></i>
                 </button>
               </li>
-              <li>
-                <a href="#"><img src="assets/image/logo.svg" alt="" /></a>
-              </li>
             </ul>
             <div class="header_button_box">
               <button type="button"><i class="fas fa-search"></i></button>
-              <a href="#"> युनिकोड </a>
+              <a href="#"> button </a>
             </div>
           </div>
         </div>
@@ -135,97 +156,113 @@
             </button>
           </span>
 
-          <ul class="menu">
+          <ul id="sidemenu">
             <li><a href="#">समाचार</a></li>
             <li>
               <a href="#">राजनीति</a>
-              <!-- <ul class="submenu">
-                  <li>
-                    <a href="#">Product 1</a>
-                  </li>
-                  <li><a href="#">Product 2</a></li>
-                </ul> -->
             </li>
             <li><a href="#">कला साहित्य</a></li>
             <li><a href="#">आम निर्वाचन-२०७९</a></li>
             <li><a href="#">स्थानीय निर्वाचन–२०७९</a></li>
             <li><a href="#">शिक्षा</a></li>
             <li><a href="#">जीवनशैली</a></li>
-            <li><a href="#">युनिकोड</a></li>
+            <li>
+              <a href="#">युनिकोड</a>
+              <ul class="sidemenu_dropdown">
+                <li>
+                  <a href="#">समाचार</a>
+                </li>
+                <li>
+                  <a href="#">राजनीति</a>
+                </li>
+                <li>
+                  <a href="#">अर्थ</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
         <div class="overlay" id="overlay"></div>
         <!-- SIDEBAR END -->
-      </header>
+      </div>
+    </header>
 
-      <!-- FIRST NEWS POST TITLE -->
-
-      <div class="news_post_title">
-        <div class="news_post_title_button">
-          <button type="button" class="primary_btn">खाद्य सङ्कटको जोखिम</button>
-        </div>
-        <div class="news_post_title_content">
-          <h1>
-            <a href="#"
-              >थाइल्याण्ड, भियतनाम र पाकिस्तानले भारतलाई पछ्याउने डर</a
-            >
-          </h1>
-        </div>
-        <div class="news_post_title_details">
-          <div class="agency_details">
-            <div class="agency_details_img">
-              <img
-                src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
-                alt=""
-              />
-            </div>
-            <div class="agency_details_name"><span>एजेन्सी</span></div>
+    <!-- FIRST NEWS POST TITLE -->
+    <section class="highlight_news_section">
+      <div class="container">
+        <div class="news_post_title">
+          <div class="news_post_title_button">
+            <button type="button" class="primary_btn">Sports game</button>
           </div>
-          <div class="news_post_title_date">
-            <span class="far fa-clock"></span>
-            <p>शनिबार, ०२ भदौ २०८०</p>
+          <div class="news_post_title_content">
+            <h1>
+              <a href="#"
+                >Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Labore doloremque corrupti quia!</a
+              >
+            </h1>
+          </div>
+          <div class="news_post_title_details">
+            <div class="agency_details">
+              <a href="#" class="agency_details_img">
+                <img
+                  src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
+                  alt=""
+                />
+              </a>
+              <a href="#" class="agency_details_name"><span>एजेन्सी</span></a>
+            </div>
+            <a href="#" class="news_post_title_date">
+              <span class="far fa-clock"></span>
+              <p>शनिबार, ०२ भदौ २०८०</p>
+            </a>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- SECOND NEWS POST IMG TITLE -->
-
-      <div class="news_post_title">
-        <div class="news_post_title_button">
-          <button type="button" class="primary_btn">स्क्वास खेल</button>
-        </div>
-        <div class="news_post_title_content">
-          <h1>
-            <a href="#"
-              >एसियाली खेलकुद : फरक छाप छोड्न एकोहोरिएका व्होन दिदी-भाइ</a
-            >
-          </h1>
-          <p>पारिवारिक विरासतले धानेको नेपाली स्क्वास</p>
-        </div>
-        <div class="news_post_title_details">
-          <div class="agency_details">
-            <div class="agency_details_img">
-              <img
-                src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
-                alt=""
-              />
+    <!-- SECOND NEWS POST IMG TITLE -->
+    <section class="highlight_news_section_second">
+      <div class="container">
+        <div class="news_post_title">
+          <div class="news_post_title_button">
+            <button type="button" class="primary_btn">स्क्वास खेल</button>
+          </div>
+          <div class="news_post_title_content">
+            <h1>
+              <a href="#"
+                >एसियाली खेलकुद : फरक छाप छोड्न एकोहोरिएका व्होन दिदी-भाइ</a
+              >
+            </h1>
+            <p>पारिवारिक विरासतले धानेको नेपाली स्क्वास</p>
+          </div>
+          <div class="news_post_title_details">
+            <div class="agency_details">
+              <a href="#" class="agency_details_img">
+                <img
+                  src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
+                  alt=""
+                />
+              </a>
+              <a href="#" class="agency_details_name"><span>रोशन राउत</span></a>
             </div>
-            <div class="agency_details_name"><span>रोशन राउत</span></div>
+            <a href="#" class="news_post_title_date">
+              <span class="far fa-clock"></span>
+              <p>शनिबार, ०२ भदौ २०८०</p>
+            </a>
           </div>
-          <div class="news_post_title_date">
-            <span class="far fa-clock"></span>
-            <p>शनिबार, ०२ भदौ २०८०</p>
+          <div class="news_post_title_img">
+            <img
+              src="https://npcdn.ratopati.com/media/news/prachanda-ghattedanda_gcqpa2aoln_kKwfdIF95C.webp"
+              alt=""
+            />
           </div>
-        </div>
-        <div class="news_post_title_img">
-          <img
-            src="https://npcdn.ratopati.com/media/news/prachanda-ghattedanda_gcqpa2aoln_kKwfdIF95C.webp"
-            alt=""
-          />
         </div>
       </div>
+    </section>
 
-      <!-- ADS -->
+    <!-- ADS -->
+    <div class="container">
       <div class="ads_banners">
         <a href="#" class="banners">
           <img
@@ -240,48 +277,58 @@
           />
         </a>
       </div>
-      <!-- ADS END -->
+    </div>
+    <!-- ADS END -->
 
-      <!-- THIRD NEWS POST IMG TITLE -->
-
-      <div class="news_post_title">
-        <div class="news_post_title_button">
-          <button type="button" class="secondary_btn">युएस बंगला जहाज</button>
-        </div>
-        <div class="news_post_title_content">
-          <h1>
-            <a href="#" class="secondary_heading"
-              >इन्देक्स डिस्पत्वेद इन्हबित थ्रोउघ बोनोरुम रेकेइवेद को उप्ती
-              बेहविओउर पिक्चर फुन्द्स ओक्कुर कोन्सेक्तेतुर् कोउन्त्री</a
-            >
-          </h1>
-          <p>
-            उद्दार कार्य नसकिएकाले विमानस्थल अनिश्चतकालका लागि बन्द गरिएको
-            विमानस्थलका प्रवक्ता प्रेमनाथ ठाकुरले जानकारी दिए ।
-          </p>
-        </div>
-        <div class="news_post_title_details">
-          <div class="agency_details">
-            <div class="agency_details_img"><span></span></div>
-            <div class="agency_details_name secondary_agency_details_name">
-              <span>गोपाल पराजुली</span>
-            </div>
+    <!-- THIRD NEWS POST IMG TITLE -->
+    <section class="news_section_three">
+      <div class="container">
+        <div class="news_post_title">
+          <div class="news_post_title_button">
+            <button type="button" class="secondary_btn">युएस बंगला जहाज</button>
           </div>
-          <!-- <div class="news_post_title_date">
-               <span class="far fa-clock"></span>
-               <p>शनिबार, ०२ भदौ २०८०</p>
-             </div> -->
-        </div>
-        <!-- <div class="news_post_title_img">
-             <img
-               src="https://npcdn.ratopati.com/media/news/prachanda-ghattedanda_gcqpa2aoln_kKwfdIF95C.webp"
-               alt=""
-             />
+          <div class="news_post_title_content">
+            <h1>
+              <a href="#" class="secondary_heading"
+                >इन्देक्स डिस्पत्वेद इन्हबित थ्रोउघ बोनोरुम रेकेइवेद को उप्ती
+                बेहविओउर पिक्चर फुन्द्स ओक्कुर कोन्सेक्तेतुर् कोउन्त्री</a
+              >
+            </h1>
+            <p>
+              उद्दार कार्य नसकिएकाले विमानस्थल अनिश्चतकालका लागि बन्द गरिएको
+              विमानस्थलका प्रवक्ता प्रेमनाथ ठाकुरले जानकारी दिए ।
+            </p>
+          </div>
+          <div class="news_post_title_details">
+            <div class="agency_details">
+              <a href="#" class="agency_details_img">
+                <img
+                  src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
+                  alt=""
+                />
+              </a>
+              <a href="#" class="agency_details_name"
+                ><span>lorem ipsum</span></a
+              >
+            </div>
+            <!-- <div class="news_post_title_date">
+             <span class="far fa-clock"></span>
+             <p>शनिबार, ०२ भदौ २०८०</p>
            </div> -->
+          </div>
+          <!-- <div class="news_post_title_img">
+           <img
+             src="https://npcdn.ratopati.com/media/news/prachanda-ghattedanda_gcqpa2aoln_kKwfdIF95C.webp"
+             alt=""
+           />
+         </div> -->
+        </div>
       </div>
+    </section>
 
-      <!-- FOURTH NEWS POST IMG TITLE -->
-      <div class="news_post_with_jpg_bg">
+    <!-- FOURTH NEWS POST IMG TITLE -->
+    <section class="news_section_four">
+      <div class="container">
         <div class="news_post_with_jpg">
           <div class="news_post_with_jpg_content">
             <h2 class="third_heading">
@@ -302,13 +349,14 @@
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- FIVTH NEWS POST  -->
-
-      <div class="news_post_three_rows">
-        <a href="#" class="news_post_three_rows_img">
-          <div class="news_post_three_rows_img_content_bg">
-            <div class="news_post_three_rows_img_content">
+    <!-- FIVTH NEWS POST  -->
+    <section class="news_section_five">
+      <div class="container">
+        <div class="news_post_three_rows">
+          <a href="#" class="news_post_three_rows_img">
+            <div class="news_post_three_rows_img_content_bg">
               <h2 class="third_heading">
                 भोलिदेखि संसदको अवरोध हट्छ : प्रधानमन्त्री प्रचण्ड
               </h2>
@@ -317,626 +365,702 @@
                 <p>२ घन्टा अगाडि</p>
               </div>
             </div>
-          </div>
-        </a>
-        <div class="news_post_three_rows_news">
-          <a href="#" class="news_post_three_rows_news_content">
-            <div class="news_post_three_rows_news_content_img">
-              <img
-                src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
-                alt=""
-              />
-            </div>
-            <div class="news_post_three_rows_news_content_text">
-              <p class="news_post_three_rows_news_content_text_p">
-                कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ : प्रकाशमान
-                सिंह
-              </p>
-              <div class="news_post_date">
-                <span class="far fa-clock"></span>
-                <p>२ घन्टा अगाडि</p>
+          </a>
+          <div class="news_post_three_rows_news">
+            <div class="news_post_three_rows_news_content">
+              <a href="#" class="news_post_three_rows_news_content_img">
+                <img
+                  src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
+                  alt=""
+                />
+              </a>
+              <div class="news_post_three_rows_news_content_text">
+                <a href="#" class="news_post_three_rows_news_content_text_p">
+                  कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ :
+                  प्रकाशमान सिंह
+                </a>
+                <div class="news_post_date">
+                  <span class="far fa-clock"></span>
+                  <p>२ घन्टा अगाडि</p>
+                </div>
               </div>
             </div>
-          </a>
-          <a href="#" class="news_post_three_rows_news_content">
-            <div class="news_post_three_rows_news_content_img">
-              <img
-                src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
-                alt=""
-              />
-            </div>
-            <div class="news_post_three_rows_news_content_text">
-              <p class="news_post_three_rows_news_content_text_p">
-                कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ : प्रकाशमान
-                सिंह
-              </p>
-              <div class="news_post_date">
-                <span class="far fa-clock"></span>
-                <p>२ घन्टा अगाडि</p>
+            <div class="news_post_three_rows_news_content">
+              <a href="#" class="news_post_three_rows_news_content_img">
+                <img
+                  src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
+                  alt=""
+                />
+              </a>
+              <div class="news_post_three_rows_news_content_text">
+                <a href="#" class="news_post_three_rows_news_content_text_p">
+                  कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ :
+                  प्रकाशमान सिंह
+                </a>
+                <div class="news_post_date">
+                  <span class="far fa-clock"></span>
+                  <p>२ घन्टा अगाडि</p>
+                </div>
               </div>
             </div>
-          </a>
-          <a href="#" class="news_post_three_rows_news_content">
-            <div class="news_post_three_rows_news_content_img">
-              <img
-                src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
-                alt=""
-              />
-            </div>
-            <div class="news_post_three_rows_news_content_text">
-              <p class="news_post_three_rows_news_content_text_p">
-                कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ : प्रकाशमान
-                सिंह
-              </p>
-              <div class="news_post_date">
-                <span class="far fa-clock"></span>
-                <p>२ घन्टा अगाडि</p>
+            <div class="news_post_three_rows_news_content">
+              <a href="#" class="news_post_three_rows_news_content_img">
+                <img
+                  src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
+                  alt=""
+                />
+              </a>
+              <div class="news_post_three_rows_news_content_text">
+                <a href="#" class="news_post_three_rows_news_content_text_p">
+                  कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ :
+                  प्रकाशमान सिंह
+                </a>
+                <div class="news_post_date">
+                  <span class="far fa-clock"></span>
+                  <p>२ घन्टा अगाडि</p>
+                </div>
               </div>
             </div>
-          </a>
-          <a href="#" class="news_post_three_rows_news_content">
-            <div class="news_post_three_rows_news_content_img">
-              <img
-                src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
-                alt=""
-              />
-            </div>
-            <div class="news_post_three_rows_news_content_text">
-              <p class="news_post_three_rows_news_content_text_p">
-                कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ : प्रकाशमान
-                सिंह
-              </p>
-              <div class="news_post_date">
-                <span class="far fa-clock"></span>
-                <p>२ घन्टा अगाडि</p>
+            <div class="news_post_three_rows_news_content">
+              <a href="#" class="news_post_three_rows_news_content_img">
+                <img
+                  src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
+                  alt=""
+                />
+              </a>
+              <div class="news_post_three_rows_news_content_text">
+                <a href="#" class="news_post_three_rows_news_content_text_p">
+                  कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ :
+                  प्रकाशमान सिंह
+                </a>
+                <div class="news_post_date">
+                  <span class="far fa-clock"></span>
+                  <p>२ घन्टा अगाडि</p>
+                </div>
               </div>
             </div>
-          </a>
-        </div>
-        <div class="news_post_three_rows_banners">
-          <a href="#" class="news_post_three_rows_banners_img">
-            <img
-              src="https://img.freepik.com/free-photo/online-marketing_53876-95312.jpg?w=1380&t=st=1693756391~exp=1693756991~hmac=e294f60b54c991c2a52c7e7e7c11191f2c3c93a1fb922634124149e0750dbaaa"
-              alt=""
-            />
-          </a>
-          <a href="#" class="news_post_three_rows_banners_img">
-            <img
-              src="https://img.freepik.com/free-photo/online-marketing_53876-95312.jpg?w=1380&t=st=1693756391~exp=1693756991~hmac=e294f60b54c991c2a52c7e7e7c11191f2c3c93a1fb922634124149e0750dbaaa"
-              alt=""
-            />
-          </a>
-          <a href="#" class="news_post_three_rows_banners_img">
-            <img
-              src="https://img.freepik.com/free-photo/online-marketing_53876-95312.jpg?w=1380&t=st=1693756391~exp=1693756991~hmac=e294f60b54c991c2a52c7e7e7c11191f2c3c93a1fb922634124149e0750dbaaa"
-              alt=""
-            />
-          </a>
-        </div>
-      </div>
-
-      <!-- SIX NEWS POST -->
-
-      <div class="news_post_three_rows">
-        <a href="#" class="news_post_three_rows_img">
-          <div class="news_post_three_rows_img_content_bg">
-            <div class="news_post_three_rows_img_content">
-              <h2 class="third_heading">
-                भोलिदेखि संसदको अवरोध हट्छ : प्रधानमन्त्री प्रचण्ड
-              </h2>
-            </div>
           </div>
-        </a>
-        <div class="news_post_three_rows_news">
-          <a href="#" class="news_post_three_rows_news_content">
-            <div class="news_post_three_rows_news_content_img">
+          <div class="news_post_three_rows_banners">
+            <a href="#" class="news_post_three_rows_banners_img">
               <img
-                src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
+                src="https://img.freepik.com/free-photo/online-marketing_53876-95312.jpg?w=1380&t=st=1693756391~exp=1693756991~hmac=e294f60b54c991c2a52c7e7e7c11191f2c3c93a1fb922634124149e0750dbaaa"
                 alt=""
               />
-            </div>
-            <div class="news_post_three_rows_news_content_text">
-              <p class="news_post_three_rows_news_content_text_p">
-                कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ : प्रकाशमान
-                सिंह
-              </p>
-            </div>
-          </a>
-          <a href="#" class="news_post_three_rows_news_content">
-            <div class="news_post_three_rows_news_content_img">
+            </a>
+            <a href="#" class="news_post_three_rows_banners_img">
               <img
-                src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
+                src="https://img.freepik.com/free-photo/online-marketing_53876-95312.jpg?w=1380&t=st=1693756391~exp=1693756991~hmac=e294f60b54c991c2a52c7e7e7c11191f2c3c93a1fb922634124149e0750dbaaa"
                 alt=""
               />
-            </div>
-            <div class="news_post_three_rows_news_content_text">
-              <p class="news_post_three_rows_news_content_text_p">
-                कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ : प्रकाशमान
-                सिंह
-              </p>
-            </div>
-          </a>
-          <a href="#" class="news_post_three_rows_news_content">
-            <div class="news_post_three_rows_news_content_img">
+            </a>
+            <a href="#" class="news_post_three_rows_banners_img">
               <img
-                src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
+                src="https://img.freepik.com/free-photo/online-marketing_53876-95312.jpg?w=1380&t=st=1693756391~exp=1693756991~hmac=e294f60b54c991c2a52c7e7e7c11191f2c3c93a1fb922634124149e0750dbaaa"
                 alt=""
               />
-            </div>
-            <div class="news_post_three_rows_news_content_text">
-              <p class="news_post_three_rows_news_content_text_p">
-                कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ : प्रकाशमान
-                सिंह
-              </p>
-            </div>
-          </a>
-          <a href="#" class="news_post_three_rows_news_content">
-            <div class="news_post_three_rows_news_content_img">
-              <img
-                src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
-                alt=""
-              />
-            </div>
-            <div class="news_post_three_rows_news_content_text">
-              <p class="news_post_three_rows_news_content_text_p">
-                कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ : प्रकाशमान
-                सिंह
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="news_post_three_rows_news_list">
-          <div class="news_post_three_rows_news_list_heading">
-            <a href="#" class="news_post_three_rows_news_list_heading_title"
-              >Lokpriya Mirror</a
-            >
-          </div>
-          <a href="#" class="news_post_three_rows_news_list_content">
-            <div class="news_post_three_rows_news_list_content_text">
-              <span>१</span>
-
-              <p class="news_post_three_rows_news_list_content_text_p">
-                डा. मन्सुरको 'लो कार्ब डाइट' उपचार विधि अवैज्ञानिक रहेको मेडिकल
-                काउन्सिलको ठहर
-              </p>
-            </div>
-            <div class="news_post_three_rows_news_list_content_img">
-              <img
-                src="https://img.freepik.com/free-photo/smart-looking-teacher_53876-23045.jpg?w=1380&t=st=1693764511~exp=1693765111~hmac=21883dad8290a65b9611f358c8e501643fdffa0cff2df7a5f23cf1885d9c9f25"
-                alt=""
-              />
-            </div>
-          </a>
-          <a href="#" class="news_post_three_rows_news_list_content">
-            <div class="news_post_three_rows_news_list_content_text">
-              <span>२</span>
-
-              <p class="news_post_three_rows_news_list_content_text_p">
-                डा. मन्सुरको 'लो कार्ब डाइट' उपचार विधि अवैज्ञानिक रहेको मेडिकल
-                काउन्सिलको ठहर
-              </p>
-            </div>
-            <div class="news_post_three_rows_news_list_content_img">
-              <img
-                src="https://img.freepik.com/free-photo/smart-looking-teacher_53876-23045.jpg?w=1380&t=st=1693764511~exp=1693765111~hmac=21883dad8290a65b9611f358c8e501643fdffa0cff2df7a5f23cf1885d9c9f25"
-                alt=""
-              />
-            </div>
-          </a>
-          <a href="#" class="news_post_three_rows_news_list_content">
-            <div class="news_post_three_rows_news_list_content_text">
-              <span>३</span>
-
-              <p class="news_post_three_rows_news_list_content_text_p">
-                डा. मन्सुरको 'लो कार्ब डाइट' उपचार विधि अवैज्ञानिक रहेको मेडिकल
-                काउन्सिलको ठहर
-              </p>
-            </div>
-            <div class="news_post_three_rows_news_list_content_img">
-              <img
-                src="https://img.freepik.com/free-photo/smart-looking-teacher_53876-23045.jpg?w=1380&t=st=1693764511~exp=1693765111~hmac=21883dad8290a65b9611f358c8e501643fdffa0cff2df7a5f23cf1885d9c9f25"
-                alt=""
-              />
-            </div>
-          </a>
-          <a href="#" class="news_post_three_rows_news_list_content">
-            <div class="news_post_three_rows_news_list_content_text">
-              <span>४</span>
-
-              <p class="news_post_three_rows_news_list_content_text_p">
-                डा. मन्सुरको 'लो कार्ब डाइट' उपचार विधि अवैज्ञानिक रहेको मेडिकल
-                काउन्सिलको ठहर
-              </p>
-            </div>
-            <div class="news_post_three_rows_news_list_content_img">
-              <img
-                src="https://img.freepik.com/free-photo/smart-looking-teacher_53876-23045.jpg?w=1380&t=st=1693764511~exp=1693765111~hmac=21883dad8290a65b9611f358c8e501643fdffa0cff2df7a5f23cf1885d9c9f25"
-                alt=""
-              />
-            </div>
-          </a>
-          <a href="#" class="news_post_three_rows_news_list_content">
-            <div class="news_post_three_rows_news_list_content_text">
-              <span>५</span>
-
-              <p class="news_post_three_rows_news_list_content_text_p">
-                डा. मन्सुरको 'लो कार्ब डाइट' उपचार विधि अवैज्ञानिक रहेको मेडिकल
-                काउन्सिलको ठहर
-              </p>
-            </div>
-            <div class="news_post_three_rows_news_list_content_img">
-              <img
-                src="https://img.freepik.com/free-photo/smart-looking-teacher_53876-23045.jpg?w=1380&t=st=1693764511~exp=1693765111~hmac=21883dad8290a65b9611f358c8e501643fdffa0cff2df7a5f23cf1885d9c9f25"
-                alt=""
-              />
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- SEVEN NEWS POST -->
-
-      <div class="news_post_three_rows">
-        <a href="#" class="news_post_three_rows_main_content_post">
-          <div class="news_post_three_rows_content_img">
-            <img
-              src="https://img.freepik.com/free-photo/portrait-female-teacher-holding-notepad-green_140725-149625.jpg?w=1380&t=st=1693767391~exp=1693767991~hmac=29b28d1c3f6ad2cdfb9a275c32574c13ef466f84af292b94aa28eb76a5c79989"
-              alt=""
-            />
-          </div>
-          <div class="news_post_three_rows_content_text">
-            <h2 class="news_post_three_rows_content_text_heading">
-              उमेरले छेकेन प्रेमकुमारीको पढ्ने रहर
-            </h2>
-            <p class="news_post_three_rows_content_text_p">
-              राँझा, बाँके । कक्षामा वरिपरि नातिनातिना उमेरका सहपाठी छन् ।
-              उनीहरूकै बीचमा हजुरआमा | उमेरकी ६१ वर्षीया प्रेमकुमारी गिरीले
-              ध्यान दिएर पछिन् । बाँकेको कोहलपुर....
-            </p>
-          </div>
-        </a>
-        <div class="news_post_three_rows_more_content_post">
-          <a href="#" class="news_post_three_rows_more_content_post_list">
-            <div class="news_post_three_rows_more_content_post_list_img">
-              <img
-                src="https://img.freepik.com/free-photo/portrait-female-teacher-holding-notepad-green_140725-149625.jpg?w=1380&t=st=1693767391~exp=1693767991~hmac=29b28d1c3f6ad2cdfb9a275c32574c13ef466f84af292b94aa28eb76a5c79989"
-                alt=""
-              />
-            </div>
-            <div class="news_post_three_rows_more_content_post_list_text">
-              <h3
-                class="news_post_three_rows_more_content_post_list_text_heading"
-              >
-                प्राण त्यागेका वडाध्यक्ष घिमिरेले फेसबुकमा लेखेका थिए- प्रिय
-                अनिता साथ निभाउन सकेन, मलाई माफ गरे !
-              </h3>
-            </div>
-          </a>
-          <a href="#" class="news_post_three_rows_more_content_post_list">
-            <div class="news_post_three_rows_more_content_post_list_img">
-              <img
-                src="https://img.freepik.com/free-photo/portrait-female-teacher-holding-notepad-green_140725-149625.jpg?w=1380&t=st=1693767391~exp=1693767991~hmac=29b28d1c3f6ad2cdfb9a275c32574c13ef466f84af292b94aa28eb76a5c79989"
-                alt=""
-              />
-            </div>
-            <div class="news_post_three_rows_more_content_post_list_text">
-              <h3
-                class="news_post_three_rows_more_content_post_list_text_heading"
-              >
-                प्राण त्यागेका वडाध्यक्ष घिमिरेले फेसबुकमा लेखेका थिए- प्रिय
-                अनिता साथ निभाउन सकेन, मलाई माफ गरे !
-              </h3>
-            </div>
-          </a>
-        </div>
-        <div class="news_post_three_rows_content_post_list">
-          <div class="news_post_three_rows_content_post_list_items">
-            <a href="#" class="news_post_three_rows_content_post_list_text"
-              >कर्णाली प्रदेशमा भदौ ४ गते सार्वजनिक बिदा</a
-            >
-          </div>
-          <div class="news_post_three_rows_content_post_list_items">
-            <a href="#" class="news_post_three_rows_content_post_list_text"
-              >पूर्वप्रधानमन्त्रीहरु परेपछि गठबन्धनले ललिता निवास प्रकरण सामसुम
-              पार्ने निर्णय गयो : लिङदेन</a
-            >
-          </div>
-          <div class="news_post_three_rows_content_post_list_items">
-            <a href="#" class="news_post_three_rows_content_post_list_text"
-              >कर्णाली प्रदेशमा भदौ ४ गते सार्वजनिक बिदा</a
-            >
-          </div>
-          <div class="news_post_three_rows_content_post_list_items">
-            <a href="#" class="news_post_three_rows_content_post_list_text"
-              >पूर्वप्रधानमन्त्रीहरु परेपछि गठबन्धनले ललिता निवास प्रकरण सामसुम
-              पार्ने निर्णय गयो : लिङदेन</a
-            >
-          </div>
-          <div class="news_post_three_rows_content_post_list_items">
-            <a href="#" class="news_post_three_rows_content_post_list_text"
-              >कर्णाली प्रदेशमा भदौ ४ गते सार्वजनिक बिदा</a
-            >
-          </div>
-          <div class="news_post_three_rows_content_post_list_items">
-            <a href="#" class="news_post_three_rows_content_post_list_text"
-              >पूर्वप्रधानमन्त्रीहरु परेपछि गठबन्धनले ललिता निवास प्रकरण सामसुम
-              पार्ने निर्णय गयो : लिङदेन</a
-            >
-          </div>
-          <div class="news_post_three_rows_content_post_list_items">
-            <a href="#" class="news_post_three_rows_content_post_list_text"
-              >कर्णाली प्रदेशमा भदौ ४ गते सार्वजनिक बिदा</a
-            >
+            </a>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- EIGHT NEWS POST -->
-
-      <div class="news_post_list_banner">
-        <div class="news_post_list_banner_content">
-          <div class="news_post_list_banner_content_main">
-            <div
-              class="news_post_list_banner_content_main_img news_post_list_banner_content_main_img_left"
-            >
-              <img
-                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                alt=""
-              />
-              <div
-                class="news_post_three_rows_content_text news_post_list_banner_content_box_img_left"
+    <!-- SIX NEWS POST -->
+    <section class="news_section_six">
+      <div class="container">
+        <div class="news_post_three_rows">
+          <a href="#" class="news_post_three_rows_img">
+            <div class="news_post_three_rows_img_content_bg">
+              <div class="news_post_three_rows_img_content">
+                <h2 class="third_heading">
+                  भोलिदेखि संसदको अवरोध हट्छ : प्रधानमन्त्री प्रचण्ड
+                </h2>
+              </div>
+            </div>
+          </a>
+          <div class="news_post_three_rows_news">
+            <div class="news_post_three_rows_news_content">
+              <a href="#" class="news_post_three_rows_news_content_img">
+                <img
+                  src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
+                  alt=""
+                />
+              </a>
+              <div class="news_post_three_rows_news_content_text">
+                <a href="#" class="news_post_three_rows_news_content_text_p">
+                  कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ :
+                  प्रकाशमान सिंह
+                </a>
+              </div>
+            </div>
+            <div class="news_post_three_rows_news_content">
+              <a href="#" class="news_post_three_rows_news_content_img">
+                <img
+                  src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
+                  alt=""
+                />
+              </a>
+              <div class="news_post_three_rows_news_content_text">
+                <a href="#" class="news_post_three_rows_news_content_text_p">
+                  कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ :
+                  प्रकाशमान सिंह
+                </a>
+              </div>
+            </div>
+            <div class="news_post_three_rows_news_content">
+              <a href="#" class="news_post_three_rows_news_content_img">
+                <img
+                  src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
+                  alt=""
+                />
+              </a>
+              <div class="news_post_three_rows_news_content_text">
+                <a href="#" class="news_post_three_rows_news_content_text_p">
+                  कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ :
+                  प्रकाशमान सिंह
+                </a>
+              </div>
+            </div>
+            <div class="news_post_three_rows_news_content">
+              <a href="#" class="news_post_three_rows_news_content_img">
+                <img
+                  src="https://img.freepik.com/free-photo/businessman-black-suit-holding-tasklist-asking-report_114579-15890.jpg?w=1380&t=st=1693754866~exp=1693755466~hmac=385601ac987332c865bdee59edb4257ac5758cd497996c7c830d0345b98b8719"
+                  alt=""
+                />
+              </a>
+              <div class="news_post_three_rows_news_content_text">
+                <a href="#" class="news_post_three_rows_news_content_text_p">
+                  कांग्रेस कमजोर भए अहिलेको प्रणालीमाथि नै प्रश्न उठ्छ :
+                  प्रकाशमान सिंह
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="news_post_three_rows_news_list">
+            <div class="news_post_three_rows_news_list_heading">
+              <a href="#" class="news_post_three_rows_news_list_heading_title"
+                >Lokpriya Mirror</a
               >
-                <a href="#" class="news_post_three_rows_content_text_heading"
-                  >उमेरले छेकेन प्रेमकुमारीको पढ्ने रहर</a
+            </div>
+            <div class="news_post_three_rows_news_list_content">
+              <div class="news_post_three_rows_news_list_content_text">
+                <span>१</span>
+
+                <a
+                  href="#"
+                  class="news_post_three_rows_news_list_content_text_p"
                 >
-                <p class="news_post_three_rows_content_text_p">
-                  राँझा, बाँके । कक्षामा वरिपरि नातिनातिना उमेरका सहपाठी छन् ।
-                  उनीहरूकै बीचमा हजुरआमा | उमेरकी ६१ वर्षीया प्रेमकुमारी गिरीले
-                  ध्यान दिएर पछिन् । बाँकेको कोहलपुर....
-                </p>
+                  डा. मन्सुरको 'लो कार्ब डाइट' उपचार विधि अवैज्ञानिक रहेको
+                </a>
               </div>
-            </div>
-            <div
-              class="news_post_list_banner_content_list news_post_list_banner_content_main_post_list border_none"
-            >
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text_header"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text_header"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text_header"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
+              <a href="#" class="news_post_three_rows_news_list_content_img">
+                <img
+                  src="https://img.freepik.com/free-photo/smart-looking-teacher_53876-23045.jpg?w=1380&t=st=1693764511~exp=1693765111~hmac=21883dad8290a65b9611f358c8e501643fdffa0cff2df7a5f23cf1885d9c9f25"
+                  alt=""
+                />
               </a>
             </div>
-          </div>
-          <div class="news_post_list_banner_content_list border_none">
-            <a href="#" class="news_post_list_banner_content_list_text_header">
-              <div class="news_post_list_banner_content_list_text_img">
+            <div class="news_post_three_rows_news_list_content">
+              <div class="news_post_three_rows_news_list_content_text">
+                <span>२</span>
+
+                <a
+                  href="#"
+                  class="news_post_three_rows_news_list_content_text_p"
+                >
+                  डा. मन्सुरको 'लो कार्ब डाइट' उपचार विधि अवैज्ञानिक रहेको
+                </a>
+              </div>
+              <a href="#" class="news_post_three_rows_news_list_content_img">
                 <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  src="https://img.freepik.com/free-photo/smart-looking-teacher_53876-23045.jpg?w=1380&t=st=1693764511~exp=1693765111~hmac=21883dad8290a65b9611f358c8e501643fdffa0cff2df7a5f23cf1885d9c9f25"
                   alt=""
                 />
+              </a>
+            </div>
+            <div class="news_post_three_rows_news_list_content">
+              <div class="news_post_three_rows_news_list_content_text">
+                <span>३</span>
+
+                <a
+                  href="#"
+                  class="news_post_three_rows_news_list_content_text_p"
+                >
+                  डा. मन्सुरको 'लो कार्ब डाइट' उपचार विधि अवैज्ञानिक रहेको
+                </a>
               </div>
-              <div class="news_post_list_banner_content_list_text_text">
-                <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </div>
-            </a>
-            <a
-              href="#"
-              class="news_post_list_banner_content_list_text border_none"
-            >
-              <div class="news_post_list_banner_content_list_text_img">
+              <a href="#" class="news_post_three_rows_news_list_content_img">
                 <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  src="https://img.freepik.com/free-photo/smart-looking-teacher_53876-23045.jpg?w=1380&t=st=1693764511~exp=1693765111~hmac=21883dad8290a65b9611f358c8e501643fdffa0cff2df7a5f23cf1885d9c9f25"
                   alt=""
                 />
+              </a>
+            </div>
+            <div class="news_post_three_rows_news_list_content">
+              <div class="news_post_three_rows_news_list_content_text">
+                <span>४</span>
+
+                <a
+                  href="#"
+                  class="news_post_three_rows_news_list_content_text_p"
+                >
+                  डा. मन्सुरको 'लो कार्ब डाइट' उपचार विधि अवैज्ञानिक रहेको
+                </a>
               </div>
-              <div class="news_post_list_banner_content_list_text_text">
-                <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </div>
-            </a>
-            <a
-              href="#"
-              class="news_post_list_banner_content_list_text border_none"
-            >
-              <div class="news_post_list_banner_content_list_text_img">
+              <a href="#" class="news_post_three_rows_news_list_content_img">
                 <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  src="https://img.freepik.com/free-photo/smart-looking-teacher_53876-23045.jpg?w=1380&t=st=1693764511~exp=1693765111~hmac=21883dad8290a65b9611f358c8e501643fdffa0cff2df7a5f23cf1885d9c9f25"
                   alt=""
                 />
+              </a>
+            </div>
+            <div class="news_post_three_rows_news_list_content">
+              <div class="news_post_three_rows_news_list_content_text">
+                <span>५</span>
+
+                <a
+                  href="#"
+                  class="news_post_three_rows_news_list_content_text_p"
+                >
+                  डा. मन्सुरको 'लो कार्ब डाइट' उपचार विधि अवैज्ञानिक रहेको
+                </a>
               </div>
-              <div class="news_post_list_banner_content_list_text_text">
-                <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </div>
-            </a>
-            <a
-              href="#"
-              class="news_post_list_banner_content_list_text border_none"
-            >
-              <div class="news_post_list_banner_content_list_text_img">
+              <a href="#" class="news_post_three_rows_news_list_content_img">
                 <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  src="https://img.freepik.com/free-photo/smart-looking-teacher_53876-23045.jpg?w=1380&t=st=1693764511~exp=1693765111~hmac=21883dad8290a65b9611f358c8e501643fdffa0cff2df7a5f23cf1885d9c9f25"
                   alt=""
                 />
-              </div>
-              <div class="news_post_list_banner_content_list_text_text">
-                <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </div>
-            </a>
-            <a
-              href="#"
-              class="news_post_list_banner_content_list_text border_none"
-            >
-              <div class="news_post_list_banner_content_list_text_img">
-                <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                  alt=""
-                />
-              </div>
-              <div class="news_post_list_banner_content_list_text_text">
-                <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- NINE NEWS POST -->
-
-      <div class="news_post_two_rows">
-        <div class="news_post_two_rows_content">
-          <div class="news_post_two_rows_content_heading">
-            <button>samajik</button>
-          </div>
-          <a href="#" class="news_post_two_rows_main_content">
-            <div class="news_post_two_rows_main_content_img">
+    <!-- SEVEN NEWS POST -->
+    <section class="news_section_seven">
+      <div class="container">
+        <div class="news_post_three_rows">
+          <div class="news_post_three_rows_main_content_post">
+            <a href="#" class="news_post_three_rows_content_img">
               <img
-                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                src="https://img.freepik.com/free-photo/portrait-female-teacher-holding-notepad-green_140725-149625.jpg?w=1380&t=st=1693767391~exp=1693767991~hmac=29b28d1c3f6ad2cdfb9a275c32574c13ef466f84af292b94aa28eb76a5c79989"
                 alt=""
               />
-              <span class="title_label">खेलकुद</span>
+            </a>
+            <div class="news_post_three_rows_content_text">
+              <h2 class="news_post_three_rows_content_text_heading">
+                <a href="#"> उमेरले छेकेन प्रेमकुमारीको पढ्ने रहर</a>
+              </h2>
+              <p class="news_post_three_rows_content_text_p">
+                राँझा, बाँके । कक्षामा वरिपरि नातिनातिना उमेरका सहपाठी छन् ।
+                उनीहरूकै बीचमा हजुरआमा | उमेरकी ६१ वर्षीया प्रेमकुमारी गिरीले
+                ध्यान दिएर पछिन् । बाँकेको कोहलपुर....
+              </p>
             </div>
-            <div class="news_post_two_rows_main_content_text">
-              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-            </div>
-          </a>
-          <div class="news_post_two_rows_main_content_post_list">
-            <a href="#" class="news_post_two_rows_main_post_list_content">
-              <div class="news_post_two_rows_main_post_list_content_img">
-                <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                  alt=""
-                />
-                <span class="title_label">खेलकुद</span>
-              </div>
-              <div class="news_post_two_rows_main_post_list_content_text">
-                <p>यूरोपेली लिगमा सावित्रा भण्डारीको डेब्यू गोल</p>
-              </div>
-            </a>
-            <a href="#" class="news_post_two_rows_main_post_list_content">
-              <div class="news_post_two_rows_main_post_list_content_img">
-                <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                  alt=""
-                />
-                <span class="title_label">खेलकुद</span>
-              </div>
-              <div class="news_post_two_rows_main_post_list_content_text">
-                <p>
-                  उमेर ढल्किए पनि लयमै छन् मेस्सी र रोनाल्डो, बढ्दै छ साउदी प्रो
-                  लिग र एमएलएसको लोकप्रियता
-                </p>
-              </div>
-            </a>
-            <a href="#" class="news_post_two_rows_main_post_list_content">
-              <div class="news_post_two_rows_main_post_list_content_img">
-                <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                  alt=""
-                />
-                <span class="title_label">खेलकुद</span>
-              </div>
-              <div class="news_post_two_rows_main_post_list_content_text">
-                <p>यूरोपेली लिगमा सावित्रा भण्डारीको डेब्यू गोल</p>
-              </div>
-            </a>
           </div>
-        </div>
-        <div class="news_post_two_rows_content border_none">
-          <div class="news_post_two_rows_content_heading">
-            <button>samajik</button>
+          <div class="news_post_three_rows_more_content_post">
+            <div class="news_post_three_rows_more_content_post_list">
+              <a
+                href="#"
+                class="news_post_three_rows_more_content_post_list_img"
+              >
+                <img
+                  src="https://img.freepik.com/free-photo/portrait-female-teacher-holding-notepad-green_140725-149625.jpg?w=1380&t=st=1693767391~exp=1693767991~hmac=29b28d1c3f6ad2cdfb9a275c32574c13ef466f84af292b94aa28eb76a5c79989"
+                  alt=""
+                />
+              </a>
+              <a
+                href="#"
+                class="news_post_three_rows_more_content_post_list_text"
+              >
+                <h3
+                  class="news_post_three_rows_more_content_post_list_text_heading"
+                >
+                  प्राण त्यागेका वडाध्यक्ष घिमिरेले फेसबुकमा लेखेका थिए- प्रिय
+                  अनिता साथ निभाउन सकेन, मलाई माफ गरे !
+                </h3>
+              </a>
+            </div>
+            <div class="news_post_three_rows_more_content_post_list">
+              <a
+                href="#"
+                class="news_post_three_rows_more_content_post_list_img"
+              >
+                <img
+                  src="https://img.freepik.com/free-photo/portrait-female-teacher-holding-notepad-green_140725-149625.jpg?w=1380&t=st=1693767391~exp=1693767991~hmac=29b28d1c3f6ad2cdfb9a275c32574c13ef466f84af292b94aa28eb76a5c79989"
+                  alt=""
+                />
+              </a>
+              <a
+                href="#"
+                class="news_post_three_rows_more_content_post_list_text"
+              >
+                <h3
+                  class="news_post_three_rows_more_content_post_list_text_heading"
+                >
+                  प्राण त्यागेका वडाध्यक्ष घिमिरेले फेसबुकमा लेखेका थिए- प्रिय
+                  अनिता साथ निभाउन सकेन, मलाई माफ गरे !
+                </h3>
+              </a>
+            </div>
           </div>
-          <a href="#" class="news_post_two_rows_main_content">
-            <div class="news_post_two_rows_main_content_img">
-              <img
-                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                alt=""
-              />
-              <span class="title_label">खेलकुद</span>
+          <div class="news_post_three_rows_content_post_list">
+            <div class="news_post_three_rows_content_post_list_items">
+              <a href="#" class="news_post_three_rows_content_post_list_text"
+                >कर्णाली प्रदेशमा भदौ ४ गते सार्वजनिक बिदा</a
+              >
             </div>
-            <div class="news_post_two_rows_main_content_text">
-              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+            <div class="news_post_three_rows_content_post_list_items">
+              <a href="#" class="news_post_three_rows_content_post_list_text"
+                >पूर्वप्रधानमन्त्रीहरु परेपछि गठबन्धनले ललिता निवास प्रकरण
+                सामसुम पार्ने निर्णय गयो : लिङदेन</a
+              >
             </div>
-          </a>
-          <div class="news_post_two_rows_main_content_post_list">
-            <a href="#" class="news_post_two_rows_main_post_list_content">
-              <div class="news_post_two_rows_main_post_list_content_img">
-                <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                  alt=""
-                />
-                <span class="title_label">खेलकुद</span>
-              </div>
-              <div class="news_post_two_rows_main_post_list_content_text">
-                <p>यूरोपेली लिगमा सावित्रा भण्डारीको डेब्यू गोल</p>
-              </div>
-            </a>
-            <a href="#" class="news_post_two_rows_main_post_list_content">
-              <div class="news_post_two_rows_main_post_list_content_img">
-                <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                  alt=""
-                />
-                <span class="title_label">खेलकुद</span>
-              </div>
-              <div class="news_post_two_rows_main_post_list_content_text">
-                <p>
-                  उमेर ढल्किए पनि लयमै छन् मेस्सी र रोनाल्डो, बढ्दै छ साउदी प्रो
-                  लिग र एमएलएसको लोकप्रियता
-                </p>
-              </div>
-            </a>
-            <a href="#" class="news_post_two_rows_main_post_list_content">
-              <div class="news_post_two_rows_main_post_list_content_img">
-                <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                  alt=""
-                />
-                <span class="title_label">खेलकुद</span>
-              </div>
-              <div class="news_post_two_rows_main_post_list_content_text">
-                <p>यूरोपेली लिगमा सावित्रा भण्डारीको डेब्यू गोल</p>
-              </div>
-            </a>
+            <div class="news_post_three_rows_content_post_list_items">
+              <a href="#" class="news_post_three_rows_content_post_list_text"
+                >कर्णाली प्रदेशमा भदौ ४ गते सार्वजनिक बिदा</a
+              >
+            </div>
+            <div class="news_post_three_rows_content_post_list_items">
+              <a href="#" class="news_post_three_rows_content_post_list_text"
+                >पूर्वप्रधानमन्त्रीहरु परेपछि गठबन्धनले ललिता निवास प्रकरण
+                सामसुम पार्ने निर्णय गयो : लिङदेन</a
+              >
+            </div>
+            <div class="news_post_three_rows_content_post_list_items">
+              <a href="#" class="news_post_three_rows_content_post_list_text"
+                >कर्णाली प्रदेशमा भदौ ४ गते सार्वजनिक बिदा</a
+              >
+            </div>
+            <div class="news_post_three_rows_content_post_list_items">
+              <a href="#" class="news_post_three_rows_content_post_list_text"
+                >पूर्वप्रधानमन्त्रीहरु परेपछि गठबन्धनले ललिता निवास प्रकरण
+                सामसुम पार्ने निर्णय गयो : लिङदेन</a
+              >
+            </div>
+            <div class="news_post_three_rows_content_post_list_items">
+              <a href="#" class="news_post_three_rows_content_post_list_text"
+                >कर्णाली प्रदेशमा भदौ ४ गते सार्वजनिक बिदा</a
+              >
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- TEN NEWS POST -->
+    <!-- EIGHT NEWS POST -->
+    <section class="news_section_eight">
+      <div class="container">
+        <div class="news_post_list_banner">
+          <div class="news_post_list_banner_content">
+            <div class="news_post_list_banner_content_main">
+              <div
+                class="news_post_list_banner_content_main_img news_post_list_banner_content_main_img_left"
+              >
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+                <div
+                  class="news_post_three_rows_content_text news_post_list_banner_content_box_img_left"
+                >
+                  <a href="#" class="news_post_three_rows_content_text_heading"
+                    >उमेरले छेकेन प्रेमकुमारीको पढ्ने रहर</a
+                  >
+                  <p class="news_post_three_rows_content_text_p">
+                    राँझा, बाँके । कक्षामा वरिपरि नातिनातिना उमेरका सहपाठी छन् ।
+                    उनीहरूकै बीचमा हजुरआमा | उमेरकी ६१ वर्षीया प्रेमकुमारी
+                    गिरीले ध्यान दिएर पछिन् । बाँकेको कोहलपुर....
+                  </p>
+                </div>
+              </div>
+              <div
+                class="news_post_list_banner_content_list news_post_list_banner_content_main_post_list border_none"
+              >
+                <div class="news_post_list_banner_content_list_text_header">
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div class="news_post_list_banner_content_list_text_header">
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div class="news_post_list_banner_content_list_text_header">
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="news_post_list_banner_content_list border_none">
+              <div class="news_post_list_banner_content_list_text_header">
+                <a href="#" class="news_post_list_banner_content_list_text_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="news_post_list_banner_content_list_text_text"
+                >
+                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+                </a>
+              </div>
+              <div class="news_post_list_banner_content_list_text border_none">
+                <a href="#" class="news_post_list_banner_content_list_text_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="news_post_list_banner_content_list_text_text"
+                >
+                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+                </a>
+              </div>
+              <div class="news_post_list_banner_content_list_text border_none">
+                <a href="#" class="news_post_list_banner_content_list_text_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="news_post_list_banner_content_list_text_text"
+                >
+                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+                </a>
+              </div>
+              <div class="news_post_list_banner_content_list_text border_none">
+                <a href="#" class="news_post_list_banner_content_list_text_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="news_post_list_banner_content_list_text_text"
+                >
+                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+                </a>
+              </div>
+              <div class="news_post_list_banner_content_list_text border_none">
+                <a href="#" class="news_post_list_banner_content_list_text_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="news_post_list_banner_content_list_text_text"
+                >
+                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NINE NEWS POST -->
+    <section class="news_section_nine">
+      <div class="container">
+        <div class="news_post_two_rows">
+          <div class="news_post_two_rows_content">
+            <div class="news_post_two_rows_content_heading">
+              <button>samajik</button>
+            </div>
+            <div class="news_post_two_rows_main_content">
+              <a href="#" class="news_post_two_rows_main_content_img">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+                <span class="title_label">खेलकुद</span>
+              </a>
+              <div class="news_post_two_rows_main_content_text">
+                <a href="#"
+                  >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+                >
+              </div>
+            </div>
+            <div class="news_post_two_rows_main_content_post_list">
+              <div class="news_post_two_rows_main_post_list_content">
+                <a
+                  href="#"
+                  class="news_post_two_rows_main_post_list_content_img"
+                >
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                  <span class="title_label">खेलकुद</span>
+                </a>
+                <div class="news_post_two_rows_main_post_list_content_text">
+                  <a href="#">यूरोपेली लिगमा सावित्रा भण्डारीको डेब्यू गोल</a>
+                </div>
+              </div>
+              <div class="news_post_two_rows_main_post_list_content">
+                <a
+                  href="#"
+                  class="news_post_two_rows_main_post_list_content_img"
+                >
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                  <span class="title_label">खेलकुद</span>
+                </a>
+                <div class="news_post_two_rows_main_post_list_content_text">
+                  <a href="#">
+                    उमेर ढल्किए पनि लयमै छन् मेस्सी र रोनाल्डो, बढ्दै छ साउदी
+                    प्रो लिग र एमएलएसको लोकप्रियता
+                  </a>
+                </div>
+              </div>
+              <div class="news_post_two_rows_main_post_list_content">
+                <a
+                  href="#"
+                  class="news_post_two_rows_main_post_list_content_img"
+                >
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                  <span class="title_label">खेलकुद</span>
+                </a>
+                <div class="news_post_two_rows_main_post_list_content_text">
+                  <a href="#">यूरोपेली लिगमा सावित्रा भण्डारीको डेब्यू गोल</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news_post_two_rows_content border_none">
+            <div class="news_post_two_rows_content_heading">
+              <button>samajik</button>
+            </div>
+            <div class="news_post_two_rows_main_content">
+              <a href="#" class="news_post_two_rows_main_content_img">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+                <span class="title_label">खेलकुद</span>
+              </a>
+              <div class="news_post_two_rows_main_content_text">
+                <a href="#"
+                  >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+                >
+              </div>
+            </div>
+            <div class="news_post_two_rows_main_content_post_list">
+              <div class="news_post_two_rows_main_post_list_content">
+                <a
+                  href="#"
+                  class="news_post_two_rows_main_post_list_content_img"
+                >
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                  <span class="title_label">खेलकुद</span>
+                </a>
+                <div class="news_post_two_rows_main_post_list_content_text">
+                  <a href="#">यूरोपेली लिगमा सावित्रा भण्डारीको डेब्यू गोल</a>
+                </div>
+              </div>
+              <div class="news_post_two_rows_main_post_list_content">
+                <a
+                  href="#"
+                  class="news_post_two_rows_main_post_list_content_img"
+                >
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                  <span class="title_label">खेलकुद</span>
+                </a>
+                <div class="news_post_two_rows_main_post_list_content_text">
+                  <a href="#">
+                    उमेर ढल्किए पनि लयमै छन् मेस्सी र रोनाल्डो, बढ्दै छ साउदी
+                    प्रो लिग र एमएलएसको लोकप्रियता
+                  </a>
+                </div>
+              </div>
+              <div class="news_post_two_rows_main_post_list_content">
+                <a
+                  href="#"
+                  class="news_post_two_rows_main_post_list_content_img"
+                >
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                  <span class="title_label">खेलकुद</span>
+                </a>
+                <div class="news_post_two_rows_main_post_list_content_text">
+                  <a href="#">यूरोपेली लिगमा सावित्रा भण्डारीको डेब्यू गोल</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEN NEWS POST -->
+    <div class="container">
       <div class="carousel_container">
         <h1 class="carousel_container_header">खेलकुद</h1>
         <div class="overflow">
@@ -1015,106 +1139,109 @@
           <button class="button next"><i class="fac fa-next"></i></button>
         </div>
       </div>
+    </div>
 
-      <!-- ELEVEN NEWS POST -->
-
+    <!-- ELEVEN NEWS POST -->
+    <section class="news_section_eleven"></section>
+    <div class="container">
       <div class="news_post_list_banner">
         <div class="news_post_two_rows_content_heading">
           <button>शिलापत्र टीभी</button>
         </div>
         <div class="news_post_list_banner_content">
           <div class="news_post_list_banner_content_list">
-            <a href="#" class="news_post_list_banner_content_list_text">
-              <div class="news_post_list_banner_content_list_text_img">
+            <div class="news_post_list_banner_content_list_text">
+              <a href="#" class="news_post_list_banner_content_list_text_img">
                 <img
                   src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                   alt=""
                 />
-              </div>
-              <div class="news_post_list_banner_content_list_text_text">
+              </a>
+              <a href="#" class="news_post_list_banner_content_list_text_text">
                 <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </div>
-            </a>
-            <a href="#" class="news_post_list_banner_content_list_text">
-              <div class="news_post_list_banner_content_list_text_img">
+              </a>
+            </div>
+            <div class="news_post_list_banner_content_list_text">
+              <a href="#" class="news_post_list_banner_content_list_text_img">
                 <img
                   src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                   alt=""
                 />
-              </div>
-              <div class="news_post_list_banner_content_list_text_text">
+              </a>
+              <a href="#" class="news_post_list_banner_content_list_text_text">
                 <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </div>
-            </a>
-            <a href="#" class="news_post_list_banner_content_list_text">
-              <div class="news_post_list_banner_content_list_text_img">
+              </a>
+            </div>
+            <div class="news_post_list_banner_content_list_text">
+              <a href="#" class="news_post_list_banner_content_list_text_img">
                 <img
                   src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                   alt=""
                 />
-              </div>
-              <div class="news_post_list_banner_content_list_text_text">
+              </a>
+              <a href="#" class="news_post_list_banner_content_list_text_text">
                 <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </div>
-            </a>
-            <a href="#" class="news_post_list_banner_content_list_text">
-              <div class="news_post_list_banner_content_list_text_img">
+              </a>
+            </div>
+            <div class="news_post_list_banner_content_list_text">
+              <a href="#" class="news_post_list_banner_content_list_text_img">
                 <img
                   src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                   alt=""
                 />
-              </div>
-              <div class="news_post_list_banner_content_list_text_text">
+              </a>
+              <a href="#" class="news_post_list_banner_content_list_text_text">
                 <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </div>
-            </a>
-            <a href="#" class="news_post_list_banner_content_list_text">
-              <div class="news_post_list_banner_content_list_text_img">
+              </a>
+            </div>
+            <div class="news_post_list_banner_content_list_text border_none">
+              <a href="#" class="news_post_list_banner_content_list_text_img">
                 <img
                   src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                   alt=""
                 />
-              </div>
-              <div class="news_post_list_banner_content_list_text_text">
+              </a>
+              <a href="#" class="news_post_list_banner_content_list_text_text">
                 <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
-          <a href="#" class="news_post_list_banner_content_main">
-            <div class="news_post_list_banner_content_main_img">
+          <div class="news_post_list_banner_content_main">
+            <a href="#" class="news_post_list_banner_content_main_img">
               <img
                 src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                 alt=""
               />
-            </div>
+            </a>
             <div class="news_post_list_banner_content_main_text">
-              <p>
+              <a href="#">
                 भ्रष्टाचारमा संलग्न भए जो कसैलाई पनि कारबाही गर्नुपर्छ || Mahesh
                 Basnet || CPN UML || Politics ||
-              </p>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- TWELVE NEWS POST -->
-      <div class="news_post_two_column_main">
+    <!-- TWELVE NEWS POST -->
+    <div class="container">
+      <div id="tabs" class="news_post_two_column_main">
         <div class="news_post_two_column_main_head">
           <h1>स्वास्थ्य</h1>
           <div class="news_post_two_column_main_head_tab">
-            <div class="news_post_two_column_main_head_tab_btns">
-              <button type="button">कृषि</button>
-              <button type="button">कृषि</button>
-              <button type="button">कृषि</button>
-              <button type="button">कृषि</button>
-              <button type="button">कृषि</button>
-            </div>
+            <ul class="news_post_two_column_main_head_tab_btns">
+              <li><a href="#tabs-1">कृषि</a></li>
+              <li><a href="#tabs-2">समाचार</a></li>
+              <li><a href="#tabs-3">थप</a></li>
+            </ul>
             <a href="#"
               >थप समाचार <i class="fas fa-long-arrow-alt-right"></i
             ></a>
           </div>
         </div>
-        <div class="news_post_two_column">
+        <!-- TAB ONE -->
+        <div id="tabs-1" class="news_post_two_column">
           <div class="news_post_two_column_content">
             <a href="#" class="news_post_two_column_content_banner">
               <div class="news_post_two_column_content_banner_content">
@@ -1123,633 +1250,1137 @@
             </a>
             <div class="news_post_two_column_content_slider">
               <div class="news_post_two_column_content_slider_content">
-                <h2>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</h2>
-                <p>
-                  अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन अभ्यास
-                  गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन अभ्यास
-                  गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन अभ्यास
-                  गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
-                </p>
+                <div class="news_post_two_column_content_slider_content_silder">
+                  <h2>
+                    <a href="#">
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </a>
+                  </h2>
+                  <p>
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                  </p>
+                </div>
+                <div class="news_post_two_column_content_slider_content_silder">
+                  <h2>
+                    <a href="#">
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </a>
+                  </h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur quibusdam fuga dolore iste sunt labore, cumque
+                    cum quasi enim iusto commodi assumenda eum, quam atque a
+                    suscipit incidunt blanditiis odio.
+                  </p>
+                </div>
+              </div>
+              <div class="news_post_two_column_content_slider_control_btn">
+                <button class="prev-button">
+                  <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="next-button">
+                  <i class="fas fa-arrow-right"></i>
+                </button>
               </div>
             </div>
             <div class="news_post_two_column_content_banner_list">
-              <a
-                href="#"
-                class="news_post_two_column_content_banner_list_content"
-              >
-                <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                  alt=""
-                />
-                <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </a>
-              <a
-                href="#"
-                class="news_post_two_column_content_banner_list_content"
-              >
-                <img
-                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                  alt=""
-                />
-                <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-              </a>
+              <div class="news_post_two_column_content_banner_list_content">
+                <a href="#">
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                </a>
+                <a href="#"
+                  >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+                >
+              </div>
+              <div class="news_post_two_column_content_banner_list_content">
+                <a href="#">
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                </a>
+                <a href="#"
+                  >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+                >
+              </div>
             </div>
           </div>
           <div class="news_post_two_column_list">
-            <a href="#" class="news_post_two_column_list_content">
-              <img
-                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                alt=""
-              />
-              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-            </a>
-            <a href="#" class="news_post_two_column_list_content">
-              <img
-                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                alt=""
-              />
-              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-            </a>
-            <a href="#" class="news_post_two_column_list_content">
-              <img
-                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                alt=""
-              />
-              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-            </a>
-            <a href="#" class="news_post_two_column_list_content">
-              <img
-                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                alt=""
-              />
-              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-            </a>
-            <a href="#" class="news_post_two_column_list_content">
-              <img
-                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                alt=""
-              />
-              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-            </a>
-            <a href="#" class="news_post_two_column_list_content">
-              <img
-                src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                alt=""
-              />
-              <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- THIRTEEN NEWS POST -->
-
-      <div class="news_post_four_rows">
-        <div class="news_post_four_rows_col">
-          <div class="news_post_four_rows_content">
-            <div class="news_post_two_rows_content_heading">
-              <button>Ramailo</button>
-            </div>
-            <div class="news_post_list_banner_content_list">
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text_header"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="news_post_four_rows_content">
-            <div class="news_post_two_rows_content_heading">
-              <button>Ramailo</button>
-            </div>
-            <div class="news_post_list_banner_content_list">
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text_header"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="news_post_four_rows_col">
-          <div class="news_post_four_rows_content">
-            <div class="news_post_two_rows_content_heading">
-              <button>Ramailo</button>
-            </div>
-            <div class="news_post_list_banner_content_list">
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text_header"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="news_post_four_rows_content border_none">
-            <div class="news_post_two_rows_content_heading">
-              <button>Ramailo</button>
-            </div>
-            <div class="news_post_list_banner_content_list">
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text_header"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-              <a
-                href="#"
-                class="news_post_list_banner_content_list_text border_none"
-              >
-                <div class="news_post_list_banner_content_list_text_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_text_text">
-                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- FOURTEEN NEWS POST-->
-
-      <div class="news_post_list_banner">
-        <div class="news_post_list_banner_content center_centent">
-          <div class="news_post_list_banner_content_list gap_low">
-            <div class="news_post_two_rows_content_heading">
-              <button>वातावरण</button>
-            </div>
-            <a href="#">
-              जुलाई, एक लाख २० हजार वर्षयताकै गर्मी महीना हुन सक्ने
-            </a>
-            <a href="#" class="news_post_list_banner_content_list_text">
-              <div class="news_post_list_banner_content_list_text_img">
+            <div class="news_post_two_column_list_content">
+              <a href="#">
                 <img
                   src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                   alt=""
                 />
-              </div>
-              <div class="news_post_list_banner_content_list_text_text">
-                <p>
-                  बीबीसीका अनुसार केही विज्ञले यो जुलाई विगत एक लाख २० हजार
-                  वर्षयताकै गर्मी महीना हुन सक्ने विश्वास गरेका छन्।
-                </p>
-              </div>
-            </a>
-            <a href="#">
-              जुलाई, एक लाख २० हजार वर्षयताकै गर्मी महीना हुन सक्ने
-            </a>
-            <a
-              href="#"
-              class="news_post_list_banner_content_list_text border_none"
-            >
-              <div class="news_post_list_banner_content_list_text_img">
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
                 <img
                   src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                   alt=""
                 />
-              </div>
-              <div class="news_post_list_banner_content_list_text_text">
-                <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- TAB TWO -->
+        <div id="tabs-2" class="news_post_two_column">
+          <div class="news_post_two_column_content">
+            <a href="#" class="news_post_two_column_content_banner">
+              <div class="news_post_two_column_content_banner_content">
+                <h2>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus, officiis?
+                </h2>
               </div>
             </a>
+            <div class="news_post_two_column_content_slider">
+              <div class="news_post_two_column_content_slider_content">
+                <div class="news_post_two_column_content_slider_content_silder">
+                  <h2>
+                    <a href="#">
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </a>
+                  </h2>
+                  <p>
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                  </p>
+                </div>
+                <div class="news_post_two_column_content_slider_content_silder">
+                  <h2>
+                    <a href="#">
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </a>
+                  </h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur quibusdam fuga dolore iste sunt labore, cumque
+                    cum quasi enim iusto commodi assumenda eum, quam atque a
+                    suscipit incidunt blanditiis odio.
+                  </p>
+                </div>
+              </div>
+              <div class="news_post_two_column_content_slider_control_btn">
+                <button class="prev-button">
+                  <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="next-button">
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+            <div class="news_post_two_column_content_banner_list">
+              <div class="news_post_two_column_content_banner_list_content">
+                <a href="#">
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                </a>
+                <a href="#"
+                  >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+                >
+              </div>
+              <div class="news_post_two_column_content_banner_list_content">
+                <a href="#">
+                  <img
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                    alt=""
+                  />
+                </a>
+                <a href="#"
+                  >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+                >
+              </div>
+            </div>
           </div>
-          <div class="news_post_list_banner_content_list_news_layout">
-            <h1>शिलापत्र टीभी</h1>
-            <div class="news_post_list_banner_content_list_news">
-              <a href="#" class="news_post_list_banner_list_news_content">
-                <div class="news_post_list_banner_content_list_news_img">
+          <div class="news_post_two_column_list">
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- TAB THREE -->
+        <div id="tabs-3" class="news_post_two_column">
+          <div class="news_post_two_column_content">
+            <a href="#" class="news_post_two_column_content_banner">
+              <div class="news_post_two_column_content_banner_content">
+                <h2>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Facilis reiciendis odit deleniti repellat modi natus, nihil
+                </h2>
+              </div>
+            </a>
+            <div class="news_post_two_column_content_slider">
+              <div class="news_post_two_column_content_slider_content">
+                <div class="news_post_two_column_content_slider_content_silder">
+                  <h2>
+                    <a href="#">
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </a>
+                  </h2>
+                  <p>
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                  </p>
+                </div>
+                <div class="news_post_two_column_content_slider_content_silder">
+                  <h2>
+                    <a href="#">
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </a>
+                  </h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequuntur quibusdam fuga dolore iste sunt labore, cumque
+                    cum quasi enim iusto commodi assumenda eum, quam atque a
+                    suscipit incidunt blanditiis odio.
+                  </p>
+                </div>
+              </div>
+              <div class="news_post_two_column_content_slider_control_btn">
+                <button class="prev-button">
+                  <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="next-button">
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+            <div class="news_post_two_column_content_banner_list">
+              <div class="news_post_two_column_content_banner_list_content">
+                <a href="#">
                   <img
                     src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                     alt=""
                   />
-                </div>
-                <div class="news_post_list_banner_content_list_news_text">
-                  <h3>
-                    '१८३१ साउन २२ को धोकापूर्ण लालमोहर सन्धिको विरोधमा आन्दोलित
-                    भएका हौं'
-                  </h3>
-                  <p>
-                    'हाम्रो आन्दोलनलाई नेतृत्वले विद्यार्थीको आन्दोलन जस्तो
-                    ठानेर वा हिजोको जस्तो आन्दोलन मानेर बसेको जस्तो देखिन्छ।
-                    त्यो दलहरूको गम्भीर भूल हो ।'
-                  </p>
-                </div>
-              </a>
-              <a href="#" class="news_post_list_banner_list_news_content">
-                <div class="news_post_list_banner_content_list_news_img">
+                </a>
+                <a href="#"
+                  >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+                >
+              </div>
+              <div class="news_post_two_column_content_banner_list_content">
+                <a href="#">
                   <img
                     src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                     alt=""
                   />
-                </div>
-                <div class="news_post_list_banner_content_list_news_text">
-                  <h3>
-                    '१८३१ साउन २२ को धोकापूर्ण लालमोहर सन्धिको विरोधमा आन्दोलित
-                    भएका हौं'
-                  </h3>
-                  <p>
-                    'हाम्रो आन्दोलनलाई नेतृत्वले विद्यार्थीको आन्दोलन जस्तो
-                    ठानेर वा हिजोको जस्तो आन्दोलन मानेर बसेको जस्तो देखिन्छ।
-                    त्यो दलहरूको गम्भीर भूल हो ।'
-                  </p>
-                </div>
+                </a>
+                <a href="#"
+                  >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="news_post_two_column_list">
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
               </a>
-              <a href="#" class="news_post_list_banner_list_news_content">
-                <div class="news_post_list_banner_content_list_news_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
-                    alt=""
-                  />
-                </div>
-                <div class="news_post_list_banner_content_list_news_text">
-                  <h3>
-                    '१८३१ साउन २२ को धोकापूर्ण लालमोहर सन्धिको विरोधमा आन्दोलित
-                    भएका हौं'
-                  </h3>
-                  <p>
-                    'हाम्रो आन्दोलनलाई नेतृत्वले विद्यार्थीको आन्दोलन जस्तो
-                    ठानेर वा हिजोको जस्तो आन्दोलन मानेर बसेको जस्तो देखिन्छ।
-                    त्यो दलहरूको गम्भीर भूल हो ।'
-                  </p>
-                </div>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
               </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
+            </div>
+            <div class="news_post_two_column_list_content">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                  alt=""
+                />
+              </a>
+              <a href="#"
+                >अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</a
+              >
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- FIFTEEN NEWS POST -->
+    <!-- THIRTEEN NEWS POST -->
+    <section class="news_section_thirteen">
+      <div class="container">
+        <div class="news_post_four_rows">
+          <div class="news_post_four_rows_col">
+            <div class="news_post_four_rows_content">
+              <div class="news_post_two_rows_content_heading">
+                <button>Ramailo</button>
+              </div>
+              <div class="news_post_list_banner_content_list">
+                <div class="news_post_list_banner_content_list_text_header">
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="news_post_four_rows_content">
+              <div class="news_post_two_rows_content_heading">
+                <button>Ramailo</button>
+              </div>
+              <div class="news_post_list_banner_content_list">
+                <div class="news_post_list_banner_content_list_text_header">
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news_post_four_rows_col">
+            <div class="news_post_four_rows_content">
+              <div class="news_post_two_rows_content_heading">
+                <button>Ramailo</button>
+              </div>
+              <div class="news_post_list_banner_content_list">
+                <div class="news_post_list_banner_content_list_text_header">
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="news_post_four_rows_content border_none">
+              <div class="news_post_two_rows_content_heading">
+                <button>Ramailo</button>
+              </div>
+              <div class="news_post_list_banner_content_list">
+                <div class="news_post_list_banner_content_list_text_header">
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="news_post_list_banner_content_list_text border_none"
+                >
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_text_text"
+                  >
+                    <p>
+                      अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन
+                    </p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <div class="news_post_details">
-        <div class="news_post_details_content">
-          <div class="news_post_details_content_banner">
-            <div class="news_post_details_content_banner_text">
+    <!-- FOURTEEN NEWS POST-->
+    <section class="news_section_fourteen">
+      <div class="container">
+        <div class="news_post_list_banner">
+          <div class="news_post_list_banner_content center_centent">
+            <div class="news_post_list_banner_content_list gap_low">
               <div class="news_post_two_rows_content_heading">
                 <button>वातावरण</button>
               </div>
-              <h3>सुन खोजे सोनाहासँगै कर्णाली किनारमा एक दिन (तस्वीर कथा)</h3>
-              <span>तस्वीर • गोपेन राई</span>
-              <p>
-                कर्णाली किनारमा सुन चाल्ने पुख्र्यौली पेशा अपनाइरहेका सोनाहा
-                महिलाको संघर्ष र चुनौतीको कथा ।
-              </p>
-            </div>
-            <div class="news_post_details_content_banner_img">
-              <img
-                src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
-                alt=""
-              />
-            </div>
-          </div>
-          <div class="news_post_details_content_list">
-            <a href="#" class="news_post_details_content_list_banner">
-              <div class="news_post_details_content_list_banner_img">
-                <img
-                  src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
-                  alt=""
-                />
-              </div>
-              <div class="news_post_details_content_list_banner_text">
-                <h3>रोपाइँको रमाइलो (तस्वीरहरू)</h3>
-                <p>आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</p>
-              </div>
-            </a>
-            <a href="#" class="news_post_details_content_list_banner">
-              <div class="news_post_details_content_list_banner_img">
-                <img
-                  src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
-                  alt=""
-                />
-              </div>
-              <div class="news_post_details_content_list_banner_text">
-                <h3>रोपाइँको रमाइलो (तस्वीरहरू)</h3>
-                <p>आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</p>
-              </div>
-            </a>
-            <a href="#" class="news_post_details_content_list_banner">
-              <div class="news_post_details_content_list_banner_img">
-                <img
-                  src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
-                  alt=""
-                />
-              </div>
-              <div class="news_post_details_content_list_banner_text">
-                <h3>रोपाइँको रमाइलो (तस्वीरहरू)</h3>
-                <p>आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="news_post_details_list_profile">
-          <div class="news_post_details_list_profile_header border_bottom">
-            <h2>विचार</h2>
-          </div>
-          <a
-            href="#"
-            class="news_post_details_list_profile_details border_bottom"
-          >
-            <img
-              src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
-              alt=""
-            />
-            <div class="news_post_details_list_profile_details_text">
-              <span>प्रा.डा. सावित्री कक्षपति</span>
-              <p>'हाम्रा नाटक जीवन्त भएकाले विदेशीले पनि धेरै मन पराउँछन्'</p>
-            </div>
-          </a>
-          <a
-            href="#"
-            class="news_post_details_list_profile_details border_bottom"
-          >
-            <img
-              src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
-              alt=""
-            />
-            <div class="news_post_details_list_profile_details_text">
-              <span>प्रा.डा. सावित्री कक्षपति</span>
-              <p>'हाम्रा नाटक जीवन्त भएकाले विदेशीले पनि धेरै मन पराउँछन्'</p>
-            </div>
-          </a>
-          <a href="#" class="news_post_details_list_profile_details">
-            <img
-              src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
-              alt=""
-            />
-            <div class="news_post_details_list_profile_details_text">
-              <span>प्रा.डा. सावित्री कक्षपति</span>
-              <p>'हाम्रा नाटक जीवन्त भएकाले विदेशीले पनि धेरै मन पराउँछन्'</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- SIXTEEN -->
-      <div class="news_post_gallery">
-        <div class="news_post_gallery_content">
-          <div class="news_post_gallery_content_row">
-            <a href="#" class="news_post_gallery_content_row_img">
-              <img
-                src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
-                alt=""
-              />
-              <div class="news_post_gallery_img_title">
-                <h2>Lorem ipsum dolor sit,</h2>
-              </div>
-            </a>
-            <div class="news_post_gallery_content_column">
-              <div class="news_post_gallery_content_column_row">
-                <a href="#" class="news_post_gallery_content_column_img">
+              <a href="#">
+                जुलाई, एक लाख २० हजार वर्षयताकै गर्मी महीना हुन सक्ने
+              </a>
+              <div class="news_post_list_banner_content_list_text">
+                <a href="#" class="news_post_list_banner_content_list_text_img">
                   <img
-                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                     alt=""
                   />
-                  <div class="news_post_gallery_img_title">
-                    <h2>Lorem ipsum dolor sit, amet</h2>
-                  </div>
                 </a>
-                <a href="#" class="news_post_gallery_content_column_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
-                    alt=""
-                  />
-                  <div class="news_post_gallery_img_title">
-                    <h2>Lorem ipsum dolor sit,</h2>
-                  </div>
+                <a
+                  href="#"
+                  class="news_post_list_banner_content_list_text_text"
+                >
+                  <p>
+                    बीबीसीका अनुसार केही विज्ञले यो जुलाई विगत एक लाख २० हजार
+                    वर्षयताकै गर्मी महीना हुन सक्ने विश्वास गरेका छन्।
+                  </p>
                 </a>
               </div>
-              <div class="news_post_gallery_content_column_row">
-                <a href="#" class="news_post_gallery_content_column_img">
+              <a href="#">
+                जुलाई, एक लाख २० हजार वर्षयताकै गर्मी महीना हुन सक्ने
+              </a>
+              <div class="news_post_list_banner_content_list_text border_none">
+                <a href="#" class="news_post_list_banner_content_list_text_img">
                   <img
-                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                    src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
                     alt=""
                   />
-                  <div class="news_post_gallery_img_title">
-                    <h2>Lorem ipsum dolor sit, amet</h2>
-                  </div>
                 </a>
-                <a href="#" class="news_post_gallery_content_column_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
-                    alt=""
-                  />
-                  <div class="news_post_gallery_img_title">
-                    <h2>Lorem ipsum dolor sit, amet consectetur</h2>
-                  </div>
-                </a>
-                <a href="#" class="news_post_gallery_content_column_img">
-                  <img
-                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
-                    alt=""
-                  />
-                  <div class="news_post_gallery_img_title">
-                    <h2>Lorem ipsum dolor sit,</h2>
-                  </div>
+                <a
+                  href="#"
+                  class="news_post_list_banner_content_list_text_text"
+                >
+                  <p>अभ्यास गर्दागर्दै लडेका फिफा सहायक रेफ्री चौधरीको निधन</p>
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="news_post_gallery_post">
-          <div class="news_post_gallery_post_img">
-            <img src="/assets//image//socialreview.png" alt="" />
+            <div class="news_post_list_banner_content_list_news_layout">
+              <h1>शिलापत्र टीभी</h1>
+              <div class="news_post_list_banner_content_list_news">
+                <div class="news_post_list_banner_list_news_content">
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_news_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <div class="news_post_list_banner_content_list_news_text">
+                    <h3>
+                      <a href="#">
+                        '१८३१ साउन २२ को धोकापूर्ण लालमोहर सन्धिको विरोधमा
+                        आन्दोलित भएका हौं'
+                      </a>
+                    </h3>
+                    <p>
+                      'हाम्रो आन्दोलनलाई नेतृत्वले विद्यार्थीको आन्दोलन जस्तो
+                      ठानेर वा हिजोको जस्तो आन्दोलन मानेर बसेको जस्तो देखिन्छ।
+                      त्यो दलहरूको गम्भीर भूल हो ।'
+                    </p>
+                  </div>
+                </div>
+                <div class="news_post_list_banner_list_news_content">
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_news_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <div class="news_post_list_banner_content_list_news_text">
+                    <h3>
+                      <a href="#">
+                        '१८३१ साउन २२ को धोकापूर्ण लालमोहर सन्धिको विरोधमा
+                        आन्दोलित भएका हौं'
+                      </a>
+                    </h3>
+                    <p>
+                      'हाम्रो आन्दोलनलाई नेतृत्वले विद्यार्थीको आन्दोलन जस्तो
+                      ठानेर वा हिजोको जस्तो आन्दोलन मानेर बसेको जस्तो देखिन्छ।
+                      त्यो दलहरूको गम्भीर भूल हो ।'
+                    </p>
+                  </div>
+                </div>
+                <div class="news_post_list_banner_list_news_content">
+                  <a
+                    href="#"
+                    class="news_post_list_banner_content_list_news_img"
+                  >
+                    <img
+                      src="https://img.freepik.com/free-photo/handsome-male-with-marker-looking-camera_23-2148200990.jpg?w=1380&t=st=1693773171~exp=1693773771~hmac=4104c7944c2ae928b063f36f11eeba17de20732b0ae4e96fd51794a23060bb05"
+                      alt=""
+                    />
+                  </a>
+                  <div class="news_post_list_banner_content_list_news_text">
+                    <h3>
+                      <a href="#">
+                        '१८३१ साउन २२ को धोकापूर्ण लालमोहर सन्धिको विरोधमा
+                        आन्दोलित भएका हौं'
+                      </a>
+                    </h3>
+                    <p>
+                      'हाम्रो आन्दोलनलाई नेतृत्वले विद्यार्थीको आन्दोलन जस्तो
+                      ठानेर वा हिजोको जस्तो आन्दोलन मानेर बसेको जस्तो देखिन्छ।
+                      त्यो दलहरूको गम्भीर भूल हो ।'
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- FOOTER -->
+    <!-- FIFTEEN NEWS POST -->
+    <section class="news_section_fifteen">
+      <div class="container">
+        <div class="news_post_details">
+          <div class="news_post_details_content">
+            <div class="news_post_details_content_banner">
+              <div class="news_post_details_content_banner_text">
+                <div class="news_post_two_rows_content_heading">
+                  <button>वातावरण</button>
+                </div>
+                <h3>
+                  <a href="#"
+                    >सुन खोजे सोनाहासँगै कर्णाली किनारमा एक दिन (तस्वीर कथा)</a
+                  >
+                </h3>
+                <span>तस्वीर • गोपेन राई</span>
+                <p>
+                  कर्णाली किनारमा सुन चाल्ने पुख्र्यौली पेशा अपनाइरहेका सोनाहा
+                  महिलाको संघर्ष र चुनौतीको कथा ।
+                </p>
+              </div>
+              <a href="#" class="news_post_details_content_banner_img">
+                <img
+                  src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="news_post_details_content_list">
+              <div class="news_post_details_content_list_banner">
+                <a href="#" class="news_post_details_content_list_banner_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                    alt=""
+                  />
+                </a>
+                <div class="news_post_details_content_list_banner_text">
+                  <h3>
+                    <a href="#"> रोपाइँको रमाइलो (तस्वीरहरू) </a>
+                  </h3>
+                  <p>
+                    आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।
+                  </p>
+                </div>
+              </div>
+              <div class="news_post_details_content_list_banner">
+                <a href="#" class="news_post_details_content_list_banner_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                    alt=""
+                  />
+                </a>
+                <div class="news_post_details_content_list_banner_text">
+                  <h3>
+                    <a href="#"> रोपाइँको रमाइलो (तस्वीरहरू) </a>
+                  </h3>
+                  <p>
+                    आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।
+                  </p>
+                </div>
+              </div>
+              <div class="news_post_details_content_list_banner">
+                <a href="#" class="news_post_details_content_list_banner_img">
+                  <img
+                    src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                    alt=""
+                  />
+                </a>
+                <div class="news_post_details_content_list_banner_text">
+                  <h3>
+                    <a href="#"> रोपाइँको रमाइलो (तस्वीरहरू) </a>
+                  </h3>
+                  <p>
+                    आज असार १५ अर्थात् धान दिवस देशभर रोपाइँ गरेर मनाइएको छ।
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news_post_details_list_profile">
+            <div class="news_post_details_list_profile_header border_bottom">
+              <h2>विचार</h2>
+            </div>
+            <div class="news_post_details_list_profile_details border_bottom">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
+                  alt=""
+                />
+              </a>
+              <div class="news_post_details_list_profile_details_text">
+                <span>प्रा.डा. सावित्री कक्षपति</span>
+                <h3>
+                  <a href="#">
+                    'हाम्रा नाटक जीवन्त भएकाले विदेशीले पनि धेरै मन पराउँछन्'
+                  </a>
+                </h3>
+              </div>
+            </div>
+            <div class="news_post_details_list_profile_details border_bottom">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
+                  alt=""
+                />
+              </a>
+              <div class="news_post_details_list_profile_details_text">
+                <span>प्रा.डा. सावित्री कक्षपति</span>
+                <h3>
+                  <a href="#">
+                    'हाम्रा नाटक जीवन्त भएकाले विदेशीले पनि धेरै मन पराउँछन्'
+                  </a>
+                </h3>
+              </div>
+            </div>
+            <div class="news_post_details_list_profile_details">
+              <a href="#">
+                <img
+                  src="https://img.freepik.com/free-photo/front-view-smiley-woman-with-fireworks_52683-98180.jpg?w=1380&t=st=1693861573~exp=1693862173~hmac=fb6d975501c8d7a4c2d9e59199414f046b6d828ab006177273b64c4514c5197a"
+                  alt=""
+                />
+              </a>
+              <div class="news_post_details_list_profile_details_text">
+                <span>प्रा.डा. सावित्री कक्षपति</span>
+                <h3>
+                  <a href="#">
+                    'हाम्रा नाटक जीवन्त भएकाले विदेशीले पनि धेरै मन पराउँछन्'
+                  </a>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIXTEEN -->
+    <section class="news_section_sixteen">
+      <div class="container">
+        <div class="news_post_gallery">
+          <div class="news_post_gallery_content">
+            <div class="news_post_gallery_content_row">
+              <a href="#" class="news_post_gallery_content_row_img">
+                <img
+                  src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                  alt=""
+                />
+                <div class="news_post_gallery_img_title">
+                  <h2>Lorem ipsum dolor sit,</h2>
+                </div>
+              </a>
+              <div class="news_post_gallery_content_column">
+                <div class="news_post_gallery_content_column_row">
+                  <a href="#" class="news_post_gallery_content_column_img">
+                    <img
+                      src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                      alt=""
+                    />
+                    <div class="news_post_gallery_img_title">
+                      <h2>Lorem ipsum dolor sit, amet</h2>
+                    </div>
+                  </a>
+                  <a href="#" class="news_post_gallery_content_column_img">
+                    <img
+                      src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                      alt=""
+                    />
+                    <div class="news_post_gallery_img_title">
+                      <h2>Lorem ipsum dolor sit,</h2>
+                    </div>
+                  </a>
+                </div>
+                <div class="news_post_gallery_content_column_row">
+                  <a href="#" class="news_post_gallery_content_column_img">
+                    <img
+                      src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                      alt=""
+                    />
+                    <div class="news_post_gallery_img_title">
+                      <h2>Lorem ipsum dolor sit, amet</h2>
+                    </div>
+                  </a>
+                  <a href="#" class="news_post_gallery_content_column_img">
+                    <img
+                      src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                      alt=""
+                    />
+                    <div class="news_post_gallery_img_title">
+                      <h2>Lorem ipsum dolor sit, amet consectetur</h2>
+                    </div>
+                  </a>
+                  <a href="#" class="news_post_gallery_content_column_img">
+                    <img
+                      src="https://img.freepik.com/free-photo/front-view-friends-partying-with-fireworks_23-2149745612.jpg?w=1380&t=st=1693862792~exp=1693863392~hmac=0a0859cb00dd294d3d3aa0f46285108264369c40bc004fe77c08dd124293225e"
+                      alt=""
+                    />
+                    <div class="news_post_gallery_img_title">
+                      <h2>Lorem ipsum dolor sit,</h2>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news_post_gallery_post">
+            <div class="news_post_gallery_post_img">
+              <img src="/assets//image//socialreview.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="container">
       <footer class="footer">
         <div class="footer_content">
           <div class="footer_info">

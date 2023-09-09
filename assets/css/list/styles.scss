@@ -49,7 +49,7 @@ h6 {
 
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -63,6 +63,11 @@ h6 {
     @include SecondaryHeader;
   }
   span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #999999;
+  }
+  a {
     font-size: 1.2rem;
     font-weight: 600;
     color: #999999;
