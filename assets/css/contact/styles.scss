@@ -37,6 +37,10 @@ h6 {
   border: none !important;
 }
 
+.margin_zero {
+  margin: 0 !important;
+}
+
 .border_bottom {
   border-bottom: solid #999999 1px;
 }
@@ -63,14 +67,17 @@ h6 {
     @include SecondaryHeader;
   }
   span {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #999999;
   }
   a {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #999999;
+    &:hover {
+      color: $primary_color;
+    }
   }
 }
 
@@ -81,7 +88,7 @@ h6 {
   .contact_details {
     width: 40%;
     .contact_form_header {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
       h1 {
         @include MainHeader;
       }
@@ -90,8 +97,8 @@ h6 {
       @include display_flex(column, start, space-between);
 
       background-color: $primary_color;
-      height: 393px;
-      padding: 20px 15px;
+
+      padding: 30px 15px;
 
       .contact_details_info_content {
         @include display_flex(column, start, center);
@@ -203,9 +210,31 @@ h6 {
     @include display_flex(column, start, column-reverse);
     .contact_details {
       width: 100%;
+      .contact_form_header {
+        h1 {
+          font-size: 1.3rem;
+        }
+      }
     }
     .contact-form {
       width: 100%;
+    }
+    .contact-form {
+      .contact_form_header {
+        h1 {
+          font-size: 1.3rem;
+        }
+      }
+      .row {
+        flex-direction: column;
+      }
+    }
+  }
+  .map {
+    .contact_form_header {
+      h1 {
+        font-size: 1.3rem;
+      }
     }
   }
 }

@@ -39,6 +39,10 @@ h6 {
   border-bottom: solid #999999 1px;
 }
 
+.margin_zero {
+  margin: 0 !important;
+}
+
 .post_date {
   display: flex;
   flex-direction: row;
@@ -51,6 +55,12 @@ h6 {
 }
 .post_date span {
   color: #d65745;
+}
+.post_date:hover {
+  color: #d65745;
+}
+.post_date p {
+  margin: 0 !important;
 }
 
 .container {
@@ -69,19 +79,22 @@ h6 {
   margin-bottom: 50px;
 }
 .breadcrumbs .breadcrumbs_home {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #202020;
 }
 .breadcrumbs span {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #999999;
 }
 .breadcrumbs a {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #999999;
+}
+.breadcrumbs a:hover {
+  color: #d65745;
 }
 
 .ads_box {
@@ -106,9 +119,12 @@ h6 {
 .main_content .main_content_result {
   width: 70%;
 }
-.main_content .main_content_result .main_content_result_content a h1 {
+.main_content .main_content_result .main_content_result_content h1 a {
   font-size: 1.8rem;
   font-weight: 700;
+  color: #000;
+}
+.main_content .main_content_result .main_content_result_content h1 a:hover {
   color: #d65745;
 }
 .main_content .main_content_result .main_content_result_content h2 {
@@ -124,14 +140,21 @@ h6 {
   justify-content: start;
   gap: 20px;
 }
-.main_content .main_content_result .main_content_result_content img {
-  width: 100%;
-  margin: 20px 0;
-}
-.main_content .main_content_result .main_content_result_content p {
+.main_content .main_content_result .main_content_result_content .main_content_result_content_detail .post_date {
   font-size: 1rem;
   font-weight: 500;
   color: #999999;
+}
+.main_content .main_content_result .main_content_result_content .main_content_result_content_detail .post_date span {
+  color: #d65745;
+}
+.main_content .main_content_result .main_content_result_content .main_content_result_content_detail .post_date:hover {
+  color: #d65745;
+}
+.main_content .main_content_result .main_content_result_content a img {
+  width: 100%;
+  margin: 20px 0;
+  display: block;
 }
 .main_content .main_content_result .main_content_result_content .my_20 {
   margin: 20px 0;
@@ -147,7 +170,7 @@ h6 {
   justify-content: space-between;
 }
 .main_content .main_content_result .main_content_result_content .main_content_result_content_share .main_content_result_content_share_no p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #202020;
 }
@@ -216,11 +239,6 @@ h6 {
   justify-content: space-between;
   gap: 10px;
 }
-.main_content .main_content_result .comments .trending_list_content .trending_list_content_text p {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #999999;
-}
 .main_content .main_content_result .comments .trending_list_content .trending_list_content_text .trending_list_content_text_head {
   width: 100%;
   display: flex;
@@ -228,15 +246,21 @@ h6 {
   align-items: center;
   justify-content: space-between;
 }
-.main_content .main_content_result .comments .trending_list_content .trending_list_content_text .trending_list_content_text_head h2 {
-  font-size: 1.2rem;
+.main_content .main_content_result .comments .trending_list_content .trending_list_content_text .trending_list_content_text_head h2 a {
+  font-size: 1rem;
   font-weight: 600;
   color: #202020;
 }
+.main_content .main_content_result .comments .trending_list_content .trending_list_content_text .trending_list_content_text_head h2 a:hover {
+  color: #d65745;
+}
 .main_content .main_content_result .comments .trending_list_content .trending_list_content_text .trending_list_content_text_head a {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #202020;
+}
+.main_content .main_content_result .comments .trending_list_content .trending_list_content_text .trending_list_content_text_head a:hover {
+  color: #d65745;
 }
 .main_content .main_content_result .contact-form {
   max-width: 100%;
@@ -303,6 +327,7 @@ h6 {
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
+  border: none !important;
   gap: 20px;
 }
 .main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_tab {
@@ -312,26 +337,42 @@ h6 {
   align-items: start;
   justify-content: start;
   gap: 10px;
-  border-bottom: solid #d65745 2px;
+  border-bottom: solid #d65745 2px !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
   margin-bottom: 10px;
   padding-bottom: 5px;
+  background-color: white !important;
 }
-.main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_tab h2 {
+.main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_tab li {
+  border: none !important;
+  border-radius: 4px;
+}
+.main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_tab li a {
   display: inline-block;
   font-size: 1rem;
   font-weight: 700;
-  color: white;
-  background-color: #d65745;
   padding: 5px 15px;
+  border-radius: 4px;
+}
+.main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_tab li a:hover {
+  background-color: #d65745;
+  color: white !important;
 }
 .main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_content {
   padding: 0 0 20px 0;
 }
-.main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_content h2 {
-  font-size: 1.2rem;
+.main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_content p {
+  margin: 0 0 10px 0;
+}
+.main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_content p a {
+  font-size: 1rem;
   font-weight: 600;
   color: #202020;
-  margin: 0 0 10px 0;
+}
+.main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_content p a:hover {
+  color: #d65745;
 }
 .main_content .main_content_recommend .main_content_recommend_list .trending_head {
   width: 100%;
@@ -367,10 +408,13 @@ h6 {
 .main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text {
   width: 60%;
 }
-.main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text h2 {
-  font-size: 1.2rem;
+.main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text p a {
+  font-size: 1rem;
   font-weight: 600;
   color: #202020;
+}
+.main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text p a:hover {
+  color: #d65745;
 }
 
 .you_also_like {
@@ -398,15 +442,17 @@ h6 {
   width: 100%;
 }
 .you_also_like .you_also_like_post_list .main_content_result_content .main_content_result_content_text h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #202020;
   margin-bottom: 10px;
 }
+.you_also_like .you_also_like_post_list .main_content_result_content .main_content_result_content_text h2 a {
+  font-size: 1.3rem;
+  color: #202020;
+  font-weight: 600;
+}
+.you_also_like .you_also_like_post_list .main_content_result_content .main_content_result_content_text h2 a:hover {
+  color: #d65745;
+}
 .you_also_like .you_also_like_post_list .main_content_result_content .main_content_result_content_text p {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #999999;
   margin-top: 10px;
 }
 
@@ -414,11 +460,23 @@ h6 {
   .container {
     max-width: 90%;
   }
+  .main_content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+  }
   .main_content .main_content_result {
     width: 100%;
   }
+  .main_content .main_content_result .main_content_result_content h1 a {
+    font-size: 1.5rem;
+  }
+  .main_content .main_content_result .main_content_result_content h2 {
+    font-size: 1.2rem;
+  }
   .main_content .main_content_recommend {
-    display: none;
+    width: 100%;
   }
   .you_also_like .you_also_like_post_list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -428,14 +486,32 @@ h6 {
   .container {
     max-width: 90%;
   }
-  .main_content .main_content_result {
-    width: 100%;
-  }
-  .main_content .main_content_result .comments .trending_list_content {
+  .main_content {
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
+  }
+  .main_content .main_content_result {
+    width: 100%;
+  }
+  .main_content .main_content_result .main_content_result_content h1 a {
+    font-size: 1.2rem;
+  }
+  .main_content .main_content_result .main_content_result_content h2 {
+    font-size: 1rem;
+  }
+  .main_content .main_content_result .main_content_result_content .main_content_result_content_detail {
+    flex-direction: column;
+  }
+  .main_content .main_content_result .main_content_result_content .main_content_result_content_share {
+    flex-direction: column;
+  }
+  .main_content .main_content_result .comments h1 {
+    font-size: 1.3rem;
+  }
+  .main_content .main_content_result .comments .trending_list_content {
+    flex-direction: column;
   }
   .main_content .main_content_result .comments .trending_list_content .trending_list_content_img {
     width: 100%;
@@ -443,10 +519,31 @@ h6 {
   .main_content .main_content_result .comments .trending_list_content .trending_list_content_text {
     width: 100%;
   }
+  .main_content .contact-form .contact_form_header h1 {
+    font: 1.3rem;
+  }
+  .main_content .contact-form .row {
+    flex-direction: column;
+  }
   .main_content .main_content_recommend {
-    display: none;
+    width: 100%;
+  }
+  .main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content {
+    flex-direction: column;
+  }
+  .main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_img {
+    width: 100%;
+  }
+  .main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text {
+    width: 100%;
+  }
+  .you_also_like .you_also_like_head h1 {
+    font-size: 1.3rem;
   }
   .you_also_like .you_also_like_post_list {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .you_also_like .you_also_like_post_list .main_content_result_content .main_content_result_content_text h2 a {
+    font-size: 1.1rem;
   }
 }/*# sourceMappingURL=styles.css.map */

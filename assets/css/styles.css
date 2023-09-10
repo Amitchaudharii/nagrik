@@ -1965,6 +1965,9 @@ h6 {
   font-size: 1.1rem;
   color: #616161;
 }
+.footer .footer_content .footer_links ul li a:hover {
+  color: #d65745;
+}
 .footer .footer_content .footer_teams {
   width: 45%;
 }

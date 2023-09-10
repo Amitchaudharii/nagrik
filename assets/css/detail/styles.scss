@@ -41,12 +41,22 @@ h6 {
   border-bottom: solid #999999 1px;
 }
 
+.margin_zero {
+  margin: 0 !important;
+}
+
 .post_date {
   @include display_flex(row, center, none);
   gap: 10px;
   @include SecondaryParagraph;
   span {
     color: $primary_color;
+  }
+  &:hover {
+    color: $primary_color;
+  }
+  p {
+    margin: 0 !important;
   }
 }
 
@@ -66,14 +76,17 @@ h6 {
     @include SecondaryHeader;
   }
   span {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #999999;
   }
   a {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #999999;
+    &:hover {
+      color: $primary_color;
+    }
   }
 }
 
@@ -93,9 +106,14 @@ h6 {
   .main_content_result {
     width: 70%;
     .main_content_result_content {
-      a {
-        h1 {
-          @include MainHeader;
+      h1 {
+        a {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #000;
+          &:hover {
+            color: $primary_color;
+          }
         }
       }
       h2 {
@@ -107,14 +125,24 @@ h6 {
       .main_content_result_content_detail {
         @include display_flex(row, start, start);
         gap: 20px;
+        .post_date {
+          @include SecondaryParagraph;
+          span {
+            color: $primary_color;
+          }
+          &:hover {
+            color: $primary_color;
+          }
+        }
       }
-      img {
-        width: 100%;
-        margin: 20px 0;
+      a {
+        img {
+          width: 100%;
+          margin: 20px 0;
+          display: block;
+        }
       }
-      p {
-        @include SecondaryParagraph;
-      }
+
       .my_20 {
         margin: 20px 0;
       }
@@ -167,7 +195,6 @@ h6 {
         gap: 20px;
         .trending_list_content_img {
           width: 20%;
-
           img {
             width: 100%;
             border-radius: 4px;
@@ -179,19 +206,23 @@ h6 {
           @include display_flex(column, start, space-between);
           gap: 10px;
 
-          p {
-            @include SecondaryParagraph;
-          }
-
           .trending_list_content_text_head {
             width: 100%;
             @include display_flex(row, center, space-between);
 
             h2 {
-              @include SecondaryHeader;
+              a {
+                @include SecondaryHeader;
+                &:hover {
+                  color: $primary_color;
+                }
+              }
             }
             a {
               @include SecondaryHeader;
+              &:hover {
+                color: $primary_color;
+              }
             }
           }
         }
@@ -258,30 +289,53 @@ h6 {
 
     .main_content_recommend_list {
       @include display_flex(column, start, space-between);
+      border: none !important;
       gap: 20px;
       .main_content_recommend_list_tab {
         width: 100%;
         @include display_flex(row, start, start);
         gap: 10px;
-        border-bottom: solid $primary_color 2px;
+        border-bottom: solid $primary_color 2px !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
         margin-bottom: 10px;
         padding-bottom: 5px;
-        h2 {
-          display: inline-block;
-          font-size: 1rem;
-          font-weight: 700;
-          color: white;
-          background-color: $primary_color;
-          padding: 5px 15px;
-          //   border-radius: 4px;
+        background-color: white !important;
+        li {
+          border: none !important;
+          border-radius: 4px;
+
+          a {
+            // color: $primary_color;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 5px 15px;
+            border-radius: 4px;
+            &:hover {
+              background-color: $primary_color;
+              color: white !important;
+            }
+          }
         }
+        // .ui-tabs .ui-tabs-nav li.ui-tabs-active {
+        //   a {
+        //     color: white !important;
+        //   }
+        // }
       }
 
       .main_content_recommend_list_content {
         padding: 0 0 20px 0;
-        h2 {
-          @include SecondaryHeader;
+        p {
           margin: 0 0 10px 0;
+          a {
+            @include SecondaryHeader;
+            &:hover {
+              color: $primary_color;
+            }
+          }
         }
       }
       .trending_head {
@@ -312,8 +366,13 @@ h6 {
           .trending_list_content_text {
             width: 60%;
 
-            h2 {
-              @include SecondaryHeader;
+            p {
+              a {
+                @include SecondaryHeader;
+                &:hover {
+                  color: $primary_color;
+                }
+              }
             }
           }
         }
@@ -344,11 +403,17 @@ h6 {
       }
       .main_content_result_content_text {
         h2 {
-          @include SecondaryHeader;
           margin-bottom: 10px;
+          a {
+            font-size: 1.3rem;
+            color: #202020;
+            font-weight: 600;
+            &:hover {
+              color: $primary_color;
+            }
+          }
         }
         p {
-          @include SecondaryParagraph;
           margin-top: 10px;
         }
       }
@@ -363,11 +428,22 @@ h6 {
   }
 
   .main_content {
+    @include display_flex(column, start, space-between);
     .main_content_result {
       width: 100%;
+      .main_content_result_content {
+        h1 {
+          a {
+            font-size: 1.5rem;
+          }
+        }
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
     }
     .main_content_recommend {
-      display: none;
+      width: 100%;
     }
   }
   .you_also_like {
@@ -383,11 +459,31 @@ h6 {
   }
 
   .main_content {
+    @include display_flex(column, start, space-between);
     .main_content_result {
       width: 100%;
+      .main_content_result_content {
+        h1 {
+          a {
+            font-size: 1.2rem;
+          }
+        }
+        h2 {
+          font-size: 1rem;
+        }
+        .main_content_result_content_detail {
+          flex-direction: column;
+        }
+        .main_content_result_content_share {
+          flex-direction: column;
+        }
+      }
       .comments {
+        h1 {
+          font-size: 1.3rem;
+        }
         .trending_list_content {
-          @include display_flex(column, start, space-between);
+          flex-direction: column;
           .trending_list_content_img {
             width: 100%;
           }
@@ -397,14 +493,52 @@ h6 {
         }
       }
     }
+    .contact-form {
+      .contact_form_header {
+        h1 {
+          font: 1.3rem;
+        }
+      }
+      .row {
+        flex-direction: column;
+      }
+    }
+
     .main_content_recommend {
-      display: none;
+      width: 100%;
+      .main_content_recommend_list {
+        .trending_list {
+          .trending_list_content {
+            flex-direction: column;
+            .trending_list_content_img {
+              width: 100%;
+            }
+            .trending_list_content_text {
+              width: 100%;
+            }
+          }
+        }
+      }
     }
   }
 
   .you_also_like {
+    .you_also_like_head {
+      h1 {
+        font-size: 1.3rem;
+      }
+    }
     .you_also_like_post_list {
       grid-template-columns: repeat(1, minmax(0, 1fr));
+      .main_content_result_content {
+        .main_content_result_content_text {
+          h2 {
+            a {
+              font-size: 1.1rem;
+            }
+          }
+        }
+      }
     }
   }
 }

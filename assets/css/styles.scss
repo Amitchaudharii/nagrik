@@ -1945,6 +1945,9 @@ h6 {
           a {
             font-size: 1.1rem;
             color: #616161;
+            &:hover {
+              color: $primary-color;
+            }
           }
         }
       }
