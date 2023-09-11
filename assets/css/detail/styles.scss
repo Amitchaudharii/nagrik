@@ -384,17 +384,35 @@ h6 {
 .you_also_like {
   margin-bottom: 20px;
   .you_also_like_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     h1 {
       @include MainHeader;
       margin-bottom: 20px;
     }
+    .slider_buttons {
+      display: flex;
+      gap: 10px;
+      button {
+        border: none;
+        outline: none;
+        background-color: $primary_color;
+        padding: 10px 20px;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
   }
   .you_also_like_post_list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 30px;
+    width: 100%;
+    // display: grid;
+    // grid-template-columns: repeat(3, minmax(0, 1fr));
+    // gap: 30px;
     .main_content_result_content {
       @include display_flex(column, start, space-between);
+      padding: 20px;
       gap: 20px;
       .main_content_result_content_img {
         img {
@@ -524,6 +542,7 @@ h6 {
 
   .you_also_like {
     .you_also_like_head {
+      flex-direction: column;
       h1 {
         font-size: 1.3rem;
       }
