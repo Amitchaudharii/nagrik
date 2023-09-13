@@ -16,7 +16,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Mukta", sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -44,15 +44,15 @@ h6 {
 .post_date {
   @include display_flex(row, center, none);
   gap: 10px;
+
   @include SecondaryParagraph;
-  i {
-    color: $primary_color !important;
-  }
+  color: $border-color !important;
   p {
+    color: #202020;
     margin: 0 !important;
-  }
-  &:hover {
-    color: $primary_color;
+    &:hover {
+      color: $primary-dark;
+    }
   }
 }
 
@@ -122,7 +122,7 @@ h6 {
         h2 {
           margin-bottom: 10px;
           a {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: #202020;
             font-weight: 600;
             &:hover {
@@ -131,7 +131,7 @@ h6 {
           }
         }
         p {
-          // margin-top: 10px;
+          margin-top: 10px;
         }
       }
     }
@@ -147,7 +147,7 @@ h6 {
         width: 100%;
         @include display_flex(row, start, start);
         gap: 10px;
-        border-bottom: solid $primary_color 2px !important;
+        border-bottom: solid $border-color 2px !important;
         border-top: none !important;
         border-left: none !important;
         border-right: none !important;
@@ -179,7 +179,7 @@ h6 {
       }
 
       .main_content_recommend_list_content {
-        padding: 0 0 20px 0;
+        padding: 20px 0;
         p {
           margin: 0 0 10px 0;
           a {
@@ -192,7 +192,7 @@ h6 {
       }
       .trending_head {
         width: 100%;
-        border-bottom: solid $primary_color 2px;
+        border-bottom: solid $border-color 2px;
         margin-bottom: 10px;
         h2 {
           font-size: 1.4rem;
@@ -219,6 +219,7 @@ h6 {
             width: 60%;
 
             p {
+              margin: 0 0 10px 0;
               a {
                 @include SecondaryHeader;
                 &:hover {

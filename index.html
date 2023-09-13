@@ -10,6 +10,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
@@ -64,79 +70,65 @@
             </a>
           </div>
           <div class="header_title_content">
-            <div class="header_main_title">
-              <h1>SILAPATRA</h1>
-              <span>SUB TITLE HERE</span>
-            </div>
+            <a href="#" class="header_main_title">
+              <img src="/assets//image/logo.png" alt="" />
+            </a>
             <div class="update_date">
-              <span>Sat, Aug 19, 2023 </span>
-              <p>sanibar, vadra, 2080</p>
+              <a href="#">
+                <span>Sat, Aug 19, 2023 </span>
+              </a>
+              <a href="#">
+                <p>sanibar, vadra, 2080</p>
+              </a>
             </div>
           </div>
         </div>
-        <div class="header_bottom">
-          <div class="header_hamburger">
-            <button class="toggleSidebar" type="button">
-              <i class="fas fa-bars"></i>
-            </button>
+      </div>
+      <div class="navbar">
+        <div class="container">
+          <div class="header_bottom">
+            <div class="header_hamburger">
+              <button class="toggleSidebar" type="button">
+                <i class="fas fa-bars"></i>
+              </button>
 
-            <a href="#"><img src="assets/image/logo.svg" alt="" /></a>
-          </div>
-          <div class="header_links">
-            <ul id="menu">
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Politics</a>
-              </li>
-
-              <li>
-                <a href="#">Lifestyle</a>
-              </li>
-              <li>
-                <a href="#">Interview</a>
-              </li>
-              <li>
-                <a href="#">Business</a>
-              </li>
-              <li>
-                <a href="#">More <i class="fas fa-caret-down"></i></a>
-
-                <ul class="menu_dropbox">
-                  <li>
-                    <a href="#">Travel</a>
-                  </li>
-                  <li>
-                    <a href="#">World</a>
-                  </li>
-                  <li>
-                    <a href="#">Entertainment</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="header_button_box">
-            <div class="search-box">
-              <button class="btn-search"><i class="fas fa-search"></i></button>
-              <input
-                type="text"
-                class="input-search"
-                placeholder="Type to Search..."
-              />
+              <a href="#"><img src="assets/image/logo.svg" alt="" /></a>
             </div>
-            <a href="#"> Button </a>
-          </div>
+            <div class="header_links">
+              <ul id="menu">
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Politics</a>
+                </li>
 
-          <div class="bottom_nav_medium_view">
-            <ul>
-              <li>
-                <button class="toggleSidebar" type="button">
-                  <i class="fas fa-bars"></i>
-                </button>
-              </li>
-            </ul>
+                <li>
+                  <a href="#">Lifestyle</a>
+                </li>
+                <li>
+                  <a href="#">Interview</a>
+                </li>
+                <li>
+                  <a href="#">Business</a>
+                </li>
+                <li>
+                  <a href="#">More <i class="fas fa-caret-down"></i></a>
+
+                  <ul class="menu_dropbox">
+                    <li>
+                      <a href="#">Travel</a>
+                    </li>
+                    <li>
+                      <a href="#">World</a>
+                    </li>
+                    <li>
+                      <a href="#">Entertainment</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
             <div class="header_button_box">
               <div class="search-box">
                 <button class="btn-search">
@@ -148,59 +140,78 @@
                   placeholder="Type to Search..."
                 />
               </div>
-              <a href="#"> button </a>
+              <a href="#"> Button </a>
+            </div>
+
+            <div class="bottom_nav_medium_view">
+              <ul>
+                <li>
+                  <button class="toggleSidebar" type="button">
+                    <i class="fas fa-bars"></i>
+                  </button>
+                </li>
+              </ul>
+              <div class="header_button_box">
+                <div class="search-box">
+                  <button class="btn-search">
+                    <i class="fas fa-search"></i>
+                  </button>
+                  <input
+                    type="text"
+                    class="input-search"
+                    placeholder="Type to Search..."
+                  />
+                </div>
+                <!-- <a href="#"> button </a> -->
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- SIDEBAR -->
-        <div class="sidebar">
-          <span class="main_title">
-            <img
-              class="logo_icon"
-              src="https://shilapatra.com/themes/shila-patra/images/logo-small.svg"
-              alt="Shilapatra Media Network"
-            />
-            <img
-              class="logo_main"
-              src="https://shilapatra.com/themes/shila-patra/images/logo.svg"
-              alt="Shilapatra Media Network"
-            />
-
-            <button id="toggleSidebarClose" class="toggle_closs">
-              <i class="fas fa-times"></i>
-            </button>
-          </span>
-
-          <ul id="sidemenu">
-            <li><a href="#">समाचार</a></li>
-            <li>
-              <a href="#">राजनीति</a>
-            </li>
-            <li><a href="#">कला साहित्य</a></li>
-            <li><a href="#">आम निर्वाचन-२०७९</a></li>
-            <li><a href="#">स्थानीय निर्वाचन–२०७९</a></li>
-            <li><a href="#">शिक्षा</a></li>
-            <li><a href="#">जीवनशैली</a></li>
-            <li>
-              <a href="#">युनिकोड</a>
-              <ul class="sidemenu_dropdown">
-                <li>
-                  <a href="#">समाचार</a>
-                </li>
-                <li>
-                  <a href="#">राजनीति</a>
-                </li>
-                <li>
-                  <a href="#">अर्थ</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="overlay" id="overlay"></div>
-        <!-- SIDEBAR END -->
       </div>
+
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <span class="main_title">
+          <a href="#"
+            ><img
+              class="logo_icon"
+              src="/assets/image/logo.png"
+              alt="Shilapatra Media Network"
+          /></a>
+
+          <button id="toggleSidebarClose" class="toggle_closs">
+            <i class="fas fa-times"></i>
+          </button>
+        </span>
+
+        <ul id="sidemenu">
+          <li><a href="#">समाचार</a></li>
+          <li>
+            <a href="#">राजनीति</a>
+          </li>
+          <li><a href="#">कला साहित्य</a></li>
+          <li><a href="#">आम निर्वाचन-२०७९</a></li>
+          <li><a href="#">स्थानीय निर्वाचन–२०७९</a></li>
+          <li><a href="#">शिक्षा</a></li>
+          <li><a href="#">जीवनशैली</a></li>
+          <li>
+            <a href="#">युनिकोड</a>
+            <ul class="sidemenu_dropdown">
+              <li>
+                <a href="#">समाचार</a>
+              </li>
+              <li>
+                <a href="#">राजनीति</a>
+              </li>
+              <li>
+                <a href="#">अर्थ</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <!-- SIDEBAR END -->
     </header>
 
     <!-- FIRST NEWS POST TITLE -->
@@ -348,7 +359,10 @@
         <div class="news_post_with_jpg">
           <div class="news_post_with_jpg_content">
             <h2 class="third_heading">
-              कालो केशमा रातो सचिका बाँधेर विश्वभर प्रेमपत्र बटुल्दै कोकोभान
+              <a href="#">
+                कालो केशमा रातो सचिका बाँधेर विश्वभर प्रेमपत्र बटुल्दै
+                कोकोभान</a
+              >
             </h2>
             <p class="paragraph">
               कालो केशमा रातो सचिका (रातो धागो) बाँधेर। सेतो स्वीटरमा ‘लभ साइन'
@@ -2051,7 +2065,7 @@
             </div>
           </div>
           <div class="news_post_details_list_profile">
-            <div class="news_post_details_list_profile_header border_bottom">
+            <div class="news_post_details_list_profile_header">
               <h2>विचार</h2>
             </div>
             <div class="news_post_details_list_profile_details border_bottom">
@@ -2189,8 +2203,8 @@
     </section>
 
     <!-- FOOTER -->
-    <div class="container">
-      <footer class="footer">
+    <footer class="footer">
+      <div class="container">
         <div class="footer_content">
           <div class="footer_info">
             <h1>NAGRIK MIRROR</h1>
@@ -2262,7 +2276,9 @@
             </div>
           </div>
         </div>
-        <div class="footer_bottom">
+      </div>
+      <div class="footer_bottom">
+        <div class="container footer_bottom_container">
           <div class="copy_right_text">
             <p>Copyright©, 2023 NAGRIKMIRROR pvt ltd, All rights reserved.</p>
           </div>
@@ -2272,7 +2288,7 @@
             </button>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
   </body>
 </html>

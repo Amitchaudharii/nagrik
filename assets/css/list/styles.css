@@ -13,7 +13,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Mukta", sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -48,15 +48,14 @@ h6 {
   font-size: 1rem;
   font-weight: 500;
   color: #999999;
-}
-.post_date i {
-  color: #d65745 !important;
+  color: #d10000 !important;
 }
 .post_date p {
+  color: #202020;
   margin: 0 !important;
 }
-.post_date:hover {
-  color: #d65745;
+.post_date p:hover {
+  color: #6a046f;
 }
 
 .container {
@@ -135,12 +134,15 @@ h6 {
   margin-bottom: 10px;
 }
 .main_content .main_content_result .main_content_result_content .main_content_result_content_text h2 a {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #202020;
   font-weight: 600;
 }
 .main_content .main_content_result .main_content_result_content .main_content_result_content_text h2 a:hover {
-  color: #d65745;
+  color: #7a0680;
+}
+.main_content .main_content_result .main_content_result_content .main_content_result_content_text p {
+  margin-top: 10px;
 }
 .main_content .main_content_recommend {
   width: 30%;
@@ -160,7 +162,7 @@ h6 {
   align-items: start;
   justify-content: start;
   gap: 10px;
-  border-bottom: solid #d65745 2px !important;
+  border-bottom: solid #d10000 2px !important;
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
@@ -180,11 +182,11 @@ h6 {
   border-radius: 4px;
 }
 .main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_tab li a:hover {
-  background-color: #d65745;
+  background-color: #7a0680;
   color: white !important;
 }
 .main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_content {
-  padding: 0 0 20px 0;
+  padding: 20px 0;
 }
 .main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_content p {
   margin: 0 0 10px 0;
@@ -195,17 +197,17 @@ h6 {
   color: #202020;
 }
 .main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_content p a:hover {
-  color: #d65745;
+  color: #7a0680;
 }
 .main_content .main_content_recommend .main_content_recommend_list .trending_head {
   width: 100%;
-  border-bottom: solid #d65745 2px;
+  border-bottom: solid #d10000 2px;
   margin-bottom: 10px;
 }
 .main_content .main_content_recommend .main_content_recommend_list .trending_head h2 {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #d65745;
+  color: #7a0680;
 }
 .main_content .main_content_recommend .main_content_recommend_list .trending_list {
   display: flex;
@@ -231,13 +233,16 @@ h6 {
 .main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text {
   width: 60%;
 }
+.main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text p {
+  margin: 0 0 10px 0;
+}
 .main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text p a {
   font-size: 1rem;
   font-weight: 600;
   color: #202020;
 }
 .main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text p a:hover {
-  color: #d65745;
+  color: #7a0680;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {

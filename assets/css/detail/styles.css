@@ -13,7 +13,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Mukta", sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -52,15 +52,14 @@ h6 {
   font-size: 1rem;
   font-weight: 500;
   color: #999999;
-}
-.post_date span {
-  color: #d65745;
-}
-.post_date:hover {
-  color: #d65745;
+  color: #d10000 !important;
 }
 .post_date p {
+  color: #202020;
   margin: 0 !important;
+}
+.post_date p:hover {
+  color: #6a046f;
 }
 
 .container {
@@ -94,7 +93,7 @@ h6 {
   color: #999999;
 }
 .breadcrumbs a:hover {
-  color: #d65745;
+  color: #7a0680;
 }
 
 .ads_box {
@@ -122,10 +121,10 @@ h6 {
 .main_content .main_content_result .main_content_result_content h1 a {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #000;
+  color: #7a0680;
 }
 .main_content .main_content_result .main_content_result_content h1 a:hover {
-  color: #d65745;
+  color: #6a046f;
 }
 .main_content .main_content_result .main_content_result_content h2 {
   font-size: 1.5rem;
@@ -144,12 +143,13 @@ h6 {
   font-size: 1rem;
   font-weight: 500;
   color: #999999;
+  color: #d10000 !important;
 }
-.main_content .main_content_result .main_content_result_content .main_content_result_content_detail .post_date span {
-  color: #d65745;
+.main_content .main_content_result .main_content_result_content .main_content_result_content_detail .post_date p {
+  color: #202020;
 }
-.main_content .main_content_result .main_content_result_content .main_content_result_content_detail .post_date:hover {
-  color: #d65745;
+.main_content .main_content_result .main_content_result_content .main_content_result_content_detail .post_date p:hover {
+  color: #6a046f;
 }
 .main_content .main_content_result .main_content_result_content a img {
   width: 100%;
@@ -176,7 +176,7 @@ h6 {
 }
 .main_content .main_content_result .main_content_result_content .main_content_result_content_share .main_content_result_content_share_no p span {
   font-size: 1.2rem;
-  color: #d65745;
+  color: #7a0680;
 }
 .main_content .main_content_result .main_content_result_content .main_content_result_content_share .main_content_result_content_share_btns button {
   cursor: pointer;
@@ -214,7 +214,7 @@ h6 {
 .main_content .main_content_result .comments h1 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #d65745;
+  color: #7a0680;
   margin-bottom: 20px;
 }
 .main_content .main_content_result .comments .trending_list_content {
@@ -252,7 +252,7 @@ h6 {
   color: #202020;
 }
 .main_content .main_content_result .comments .trending_list_content .trending_list_content_text .trending_list_content_text_head h2 a:hover {
-  color: #d65745;
+  color: #7a0680;
 }
 .main_content .main_content_result .comments .trending_list_content .trending_list_content_text .trending_list_content_text_head a {
   font-size: 1rem;
@@ -260,7 +260,7 @@ h6 {
   color: #202020;
 }
 .main_content .main_content_result .comments .trending_list_content .trending_list_content_text .trending_list_content_text_head a:hover {
-  color: #d65745;
+  color: #7a0680;
 }
 .main_content .main_content_result .contact-form {
   max-width: 100%;
@@ -269,7 +269,7 @@ h6 {
 .main_content .main_content_result .contact-form .contact_form_header h1 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #d65745;
+  color: #7a0680;
 }
 .main_content .main_content_result .contact-form .contact_form_header p {
   font-size: 1rem;
@@ -337,7 +337,7 @@ h6 {
   align-items: start;
   justify-content: start;
   gap: 10px;
-  border-bottom: solid #d65745 2px !important;
+  border-bottom: solid #d10000 2px !important;
   border-top: none !important;
   border-left: none !important;
   border-right: none !important;
@@ -357,11 +357,11 @@ h6 {
   border-radius: 4px;
 }
 .main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_tab li a:hover {
-  background-color: #d65745;
+  background-color: #7a0680;
   color: white !important;
 }
 .main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_content {
-  padding: 0 0 20px 0;
+  padding: 20px 0;
 }
 .main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_content p {
   margin: 0 0 10px 0;
@@ -372,17 +372,17 @@ h6 {
   color: #202020;
 }
 .main_content .main_content_recommend .main_content_recommend_list .main_content_recommend_list_content p a:hover {
-  color: #d65745;
+  color: #7a0680;
 }
 .main_content .main_content_recommend .main_content_recommend_list .trending_head {
   width: 100%;
-  border-bottom: solid #d65745 2px;
+  border-bottom: solid #d10000 2px;
   margin-bottom: 10px;
 }
 .main_content .main_content_recommend .main_content_recommend_list .trending_head h2 {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #d65745;
+  color: #7a0680;
 }
 .main_content .main_content_recommend .main_content_recommend_list .trending_list {
   display: flex;
@@ -408,13 +408,16 @@ h6 {
 .main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text {
   width: 60%;
 }
+.main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text p {
+  margin: 0 0 10px 0;
+}
 .main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text p a {
   font-size: 1rem;
   font-weight: 600;
   color: #202020;
 }
 .main_content .main_content_recommend .main_content_recommend_list .trending_list .trending_list_content .trending_list_content_text p a:hover {
-  color: #d65745;
+  color: #7a0680;
 }
 
 .you_also_like {
@@ -428,7 +431,7 @@ h6 {
 .you_also_like .you_also_like_head h1 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #d65745;
+  color: #7a0680;
   margin-bottom: 20px;
 }
 .you_also_like .you_also_like_head .slider_buttons {
@@ -438,7 +441,7 @@ h6 {
 .you_also_like .you_also_like_head .slider_buttons button {
   border: none;
   outline: none;
-  background-color: #d65745;
+  background-color: #7a0680;
   padding: 10px 20px;
   color: white;
   font-size: 1rem;
@@ -467,7 +470,7 @@ h6 {
   font-weight: 600;
 }
 .you_also_like .you_also_like_post_list .main_content_result_content .main_content_result_content_text h2 a:hover {
-  color: #d65745;
+  color: #7a0680;
 }
 .you_also_like .you_also_like_post_list .main_content_result_content .main_content_result_content_text p {
   margin-top: 10px;
